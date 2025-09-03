@@ -1,0 +1,18 @@
+.coustom-height {
+	height: 507px;
+}
+
+.box-gray {
+  backdrop-filter: blur(8px);
+  border-radius: 1rem;
+}
+
+@media (max-width: 768px) {
+  .box-gray {
+    padding: 1rem;
+  }
+  
+  .box-gray h1 {
+    font-size: 1.75rem;
+  }
+}
