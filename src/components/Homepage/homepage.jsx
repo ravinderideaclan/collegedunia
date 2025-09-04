@@ -1,9 +1,8 @@
 import React, { useState } from "react";
 import "./homepage.css";
 import 'remixicon/fonts/remixicon.css';
-// Import Swiper styles
-import "swiper/css";
-import "swiper/css/pagination";
+
+
 
 export const Homepage = () => {
     // Categories data with images, names, and college counts
@@ -158,7 +157,7 @@ export const Homepage = () => {
 
 
 
-                    
+
                 </div>
             </section>
 
@@ -178,8 +177,8 @@ export const Homepage = () => {
                                 <button
                                     key={tag}
                                     className={`px-4 py-2 rounded-full text-sm font-medium whitespace-nowrap transition ${activeTag === tag
-                                            ? "bg-blue-600 text-white"
-                                            : "bg-white text-gray-700 hover:bg-gray-100"
+                                        ? "bg-blue-600 text-white"
+                                        : "bg-white text-gray-700 hover:bg-gray-100"
                                         }`}
                                     onClick={() => setActiveTag(tag)}
                                 >

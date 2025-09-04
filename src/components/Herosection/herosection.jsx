@@ -1,6 +1,6 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import "./Herosection.css";
-// Import placeholder images directly (you'll need to create these files)
+
 import carousel1 from '../../assets/images/campuses/amity-campus-1.jpg';
 import carousel2 from '../../assets/images/campuses/cu-campus.jpg';
 import carousel3 from '../../assets/images/campuses/iit-mumbai.jpg';
@@ -30,6 +30,15 @@ function Herosection() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [searchQuery, setSearchQuery] = useState('');
 
+  // ✅ Auto Slide Effect
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentSlide((prev) => (prev === slides.length - 1 ? 0 : prev + 1));
+    }, 4000); // change slide every 4 seconds
+
+    return () => clearInterval(interval); // cleanup on unmount
+  }, []);
+
   const prevSlide = () => {
     setCurrentSlide((prev) => (prev === 0 ? slides.length - 1 : prev - 1));
   };
@@ -39,14 +48,13 @@ function Herosection() {
   };
 
   const handleSearch = () => {
-    // Implement your search logic here
     console.log('Searching for:', searchQuery);
   };
 
   return (
     <div id="animation-carousel" className="relative w-full" data-carousel="static">
       {/* Carousel wrapper */}
-      <div className="relative h-56 overflow-hidden  coustom-height">
+      <div className="relative h-56 overflow-hidden coustom-height">
         {slides.map((slide, index) => (
           <div
             key={slide.id}
@@ -62,62 +70,24 @@ function Herosection() {
         ))}
       </div>
 
-      {/* Slider controls */}
+      {/* (Optional) Prev/Next Buttons */}
       <button
-        type="button"
-        className="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
         onClick={prevSlide}
+        className="absolute top-1/2 left-4 -translate-y-1/2 bg-black/50 text-white p-2 rounded-full hover:bg-black"
       >
-        <span className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
-          <svg
-            className="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180"
-            aria-hidden="true"
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 6 10"
-          >
-            <path
-              stroke="currentColor"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="2"
-              d="M5 1 1 5l4 4"
-            />
-          </svg>
-          <span className="sr-only">Previous</span>
-        </span>
+        ‹
       </button>
       <button
-        type="button"
-        className="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
         onClick={nextSlide}
+        className="absolute top-1/2 right-4 -translate-y-1/2 bg-black/50 text-white p-2 rounded-full hover:bg-black"
       >
-        <span className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
-          <svg
-            className="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180"
-            aria-hidden="true"
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 6 10"
-          >
-            <path
-              stroke="currentColor"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="2"
-              d="m1 9 4-4-4-4"
-            />
-          </svg>
-          <span className="sr-only">Next</span>
-        </span>
+        ›
       </button>
 
-
-      {/*Search Section */}
-
+      {/* Search Section */}
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-        <div className="absolute top-0 bg-gray-800/70 rounded p-8 mt-10 max-w-170 box-gray">
-          <div className="">
+        <div className="custom-search absolute top-0 bg-gray-800/70 rounded p-8 mt-10 md:max-w-170  w-full box-gray">
+          <div>
             <h1 className="text-4xl font-extrabold text-white mb-4">
               Find Your Perfect College & Build Your Future
             </h1>
@@ -159,18 +129,19 @@ function Herosection() {
               </button>
             </div>
 
+            <p className='text-white text-base'>Popular Courses</p>
             <div className='keywords-tags relative overflow-x-auto whitespace-nowrap py-3 max-w-full'>
-              <a href='#' className='px-3 bg-red-600  text-white p-2 rounded-4xl mr-2 hover:bg-white hover:text-gray-800'> All Courses </a>
-              <a href='#' className='px-3 bg-white p-2 rounded-4xl mr-2 hover:bg-red-600 hover:text-white'>B.Tech </a>
-              <a href='#' className='px-3 bg-white p-2 rounded-4xl mr-2 hover:bg-red-600 hover:text-white'> MBA </a>
-              <a href='#' className='px-3 bg-white p-2 rounded-4xl mr-2 hover:bg-red-600 hover:text-white'> M.Tech </a>
-              <a href='#' className='px-3 bg-white p-2 rounded-4xl mr-2 hover:bg-red-600 hover:text-white'>MBBS </a>
-              <a href='#' className='px-3 bg-white p-2 rounded-4xl mr-2 hover:bg-red-600 hover:text-white'> B.Com </a>
-              <a href='#' className='px-3 bg-white p-2 rounded-4xl mr-2 hover:bg-red-600 hover:text-white'> B.Sc </a>
-              <a href='#' className='px-3 bg-white p-2 rounded-4xl mr-2 hover:bg-red-600 hover:text-white'> B.Sc (Nursing) </a>
-               <a href='#' className='px-3 bg-white p-2 rounded-4xl mr-2 hover:bg-red-600 hover:text-white'> BA </a>
-                             <a href='#' className='px-3 bg-white p-2 rounded-4xl mr-2 hover:bg-red-600 hover:text-white'> BBA </a>
-                                           <a href='#' className='px-3 bg-white p-2 rounded-4xl mr-2 hover:bg-red-600 hover:text-white'> BCA </a>
+              <a href='#' className='px-3 text-xs bg-red-600 text-white p-2 rounded-4xl mr-2 hover:bg-white hover:text-gray-800'>All Courses</a>
+              <a href='#' className='px-3 text-xs bg-white p-2 rounded-4xl mr-2 hover:bg-red-600 hover:text-white'>B.Tech</a>
+              <a href='#' className='px-3 text-xs bg-white p-2 rounded-4xl mr-2 hover:bg-red-600 hover:text-white'>MBA</a>
+              <a href='#' className='px-3 text-xs bg-white p-2 rounded-4xl mr-2 hover:bg-red-600 hover:text-white'>M.Tech</a>
+              <a href='#' className='px-3 text-xs bg-white p-2 rounded-4xl mr-2 hover:bg-red-600 hover:text-white'>MBBS</a>
+              <a href='#' className='px-3 text-xs bg-white p-2 rounded-4xl mr-2 hover:bg-red-600 hover:text-white'>B.Com</a>
+              <a href='#' className='px-3 text-xs bg-white p-2 rounded-4xl mr-2 hover:bg-red-600 hover:text-white'>B.Sc</a>
+              <a href='#' className='px-3 text-xs bg-white p-2 rounded-4xl mr-2 hover:bg-red-600 hover:text-white'>B.Sc (Nursing)</a>
+              <a href='#' className='px-3 text-xs bg-white p-2 rounded-4xl mr-2 hover:bg-red-600 hover:text-white'>BA</a>
+              <a href='#' className='px-3 text-xs bg-white p-2 rounded-4xl mr-2 hover:bg-red-600 hover:text-white'>BBA</a>
+              <a href='#' className='px-3 text-xs bg-white p-2 rounded-4xl mr-2 hover:bg-red-600 hover:text-white'>BCA</a>
             </div>
           </div>
         </div>
