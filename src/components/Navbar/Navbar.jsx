@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import "./Navbar.css";
 import TopNavbar from "./topNavbar.jsx";
-import canamLogo from "../../assets/images/header-canam-logo.svg"; 
-import "remixicon/fonts/remixicon.css"; 
+import "remixicon/fonts/remixicon.css";
 
 export const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -11,15 +10,13 @@ export const Navbar = () => {
   return (
     <>
       <TopNavbar />
-
       <div className="main-navbar bg-gray-900 text-white shadow-sm relative z-40 sticky top-0 ">
         <div className="container mx-auto md:px-0 px-3">
           <nav className="flex items-center justify-between py-3">
             {/* Logo */}
             <a href="/" className="flex items-center space-x-2">
-              <img src={canamLogo} className="h-10" alt="Canam Logo" />
+              <img src="../../src/assets/images/header-canam-logo.svg" className="h-10" alt="Canam Logo" />
             </a>
-
             {/* Desktop Nav */}
             <ul className="hidden md:flex space-x-6 font-medium">
               <li><a href="#" className="hover:text-red-600 transition text-sm">Home</a></li>
@@ -29,11 +26,10 @@ export const Navbar = () => {
               <li><a href="#" className="hover:text-red-600 transition text-sm">Science</a></li>
               <li><a href="#" className="hover:text-red-600 transition text-sm">Study Abroad</a></li>
             </ul>
-
             {/* Right Icons */}
             <div className="flex items-center space-x-4">
               {/* Search Icon */}
-              <button 
+              <button
                 className="text-xl hover:text-blue-400"
                 onClick={() => setSearchOpen(true)} // ✅ open modal
               >

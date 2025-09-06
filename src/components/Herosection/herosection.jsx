@@ -86,7 +86,7 @@ function Herosection() {
 
       {/* Search Section */}
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-        <div className="custom-search absolute top-0 bg-gray-800/70 rounded p-8 mt-10 md:max-w-170  w-full box-gray">
+        <div className="custom-search absolute top-0  rounded p-8 mt-10 md:max-w-170  w-full">
           <div>
             <h1 className="text-4xl font-extrabold text-white mb-4">
               Find Your Perfect College & Build Your Future
@@ -125,13 +125,12 @@ function Herosection() {
                 onClick={handleSearch}
                 className="bg-gradient-to-r from-blue-600 to-red-500 text-white px-8 py-4 rounded-lg font-semibold hover:opacity-90 transition-all duration-200 whitespace-nowrap shadow-lg"
               >
-                Search Now
+              Search Now
               </button>
             </div>
 
-            <p className='text-white text-base'>Popular Courses</p>
-            <div className='keywords-tags relative overflow-x-auto whitespace-nowrap py-3 max-w-full'>
-              <a href='#' className='px-3 text-xs bg-red-600 text-white p-2 rounded-4xl mr-2 hover:bg-white hover:text-gray-800'>All Courses</a>
+            <p className='text-white text-base'> <i className="ri-graduation-cap-line me-1"></i>  Popular Courses</p>
+            <div className='keywords-tags relative overflow-x-auto whitespace-nowrap py-3 max-w-full'>             
               <a href='#' className='px-3 text-xs bg-white p-2 rounded-4xl mr-2 hover:bg-red-600 hover:text-white'>B.Tech</a>
               <a href='#' className='px-3 text-xs bg-white p-2 rounded-4xl mr-2 hover:bg-red-600 hover:text-white'>MBA</a>
               <a href='#' className='px-3 text-xs bg-white p-2 rounded-4xl mr-2 hover:bg-red-600 hover:text-white'>M.Tech</a>
@@ -140,13 +139,10 @@ function Herosection() {
               <a href='#' className='px-3 text-xs bg-white p-2 rounded-4xl mr-2 hover:bg-red-600 hover:text-white'>B.Sc</a>
               <a href='#' className='px-3 text-xs bg-white p-2 rounded-4xl mr-2 hover:bg-red-600 hover:text-white'>B.Sc (Nursing)</a>
               <a href='#' className='px-3 text-xs bg-white p-2 rounded-4xl mr-2 hover:bg-red-600 hover:text-white'>BA</a>
-              <a href='#' className='px-3 text-xs bg-white p-2 rounded-4xl mr-2 hover:bg-red-600 hover:text-white'>BBA</a>
-              <a href='#' className='px-3 text-xs bg-white p-2 rounded-4xl mr-2 hover:bg-red-600 hover:text-white'>BCA</a>
             </div>
           </div>
         </div>
       </div>
-
     </div>
   );
 }
