@@ -53,45 +53,47 @@ function Herosection() {
 
   return (
     <div id="animation-carousel" className="relative w-full" data-carousel="static">
-      {/* Carousel wrapper */}
-      <div className="relative h-56 overflow-hidden coustom-height">
-        {slides.map((slide, index) => (
-          <div
-            key={slide.id}
-            className={`absolute w-full h-full transition-opacity duration-700 ease-in-out transform
+
+      <div className='hidden lg:block sm:block'>
+        {/* Carousel wrapper */}
+        <div className="relative h-56 overflow-hidden coustom-height">
+          {slides.map((slide, index) => (
+            <div
+              key={slide.id}
+              className={`absolute w-full h-full transition-opacity duration-700 ease-in-out transform
               ${index === currentSlide ? 'opacity-100' : 'opacity-0'}`}
-          >
-            <img
-              src={slide.image}
-              className="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-              alt={slide.title}
-            />
-          </div>
-        ))}
+            >
+              <img
+                src={slide.image}
+                className="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+                alt={slide.title}
+              />
+            </div>
+          ))}
+        </div>
+
+        {/* (Optional) Prev/Next Buttons */}
+        <button
+          onClick={prevSlide}
+          className="absolute top-1/2 left-4 -translate-y-1/2 bg-black/50 text-white p-2 rounded-full hover:bg-black"
+        >
+          ‹
+        </button>
+        <button
+          onClick={nextSlide}
+          className="absolute top-1/2 right-4 -translate-y-1/2 bg-black/50 text-white p-2 rounded-full hover:bg-black"
+        >
+          ›
+        </button>
       </div>
-
-      {/* (Optional) Prev/Next Buttons */}
-      <button
-        onClick={prevSlide}
-        className="absolute top-1/2 left-4 -translate-y-1/2 bg-black/50 text-white p-2 rounded-full hover:bg-black"
-      >
-        ‹
-      </button>
-      <button
-        onClick={nextSlide}
-        className="absolute top-1/2 right-4 -translate-y-1/2 bg-black/50 text-white p-2 rounded-full hover:bg-black"
-      >
-        ›
-      </button>
-
       {/* Search Section */}
-      <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-        <div className="custom-search absolute top-0  rounded p-8 mt-10 md:max-w-170  w-full">
+      <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto sm:px-0 px-8 pb-4 sm:pb-0 bg-gray-300 sm:bg-none">
+        <div className="custom-search relative md:absolute top-0  rounded pt-8 mt-0 md:mt-10 md:max-w-170  w-full">
           <div>
-            <h1 className="text-4xl font-extrabold text-white mb-4">
-              Find Your Perfect College & Build Your Future
+            <h1 className="text-3xl md:text-4xl font-extrabold text-gray-900 mb-4">
+              Find Your <span className='text-red-600'> Perfect College</span>  & Build  Your Future
             </h1>
-            <p className="text-white mb-6">
+            <p className="text-gray-900 mb-6">
               Discover top colleges, explore courses, and get expert guidance for your educational journey
             </p>
 
@@ -117,7 +119,7 @@ function Herosection() {
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
                     placeholder="Search Colleges, Exams, Courses..."
-                    className="w-full pl-12 pr-4 py-4 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-lg bg-white"
+                    className="w-full pl-12 pr-4 py-4 border border-gray-400 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-lg bg-white text-sm md:text-base"
                   />
                 </div>
               </div>
@@ -125,20 +127,20 @@ function Herosection() {
                 onClick={handleSearch}
                 className="bg-gradient-to-r from-blue-600 to-red-500 text-white px-8 py-4 rounded-lg font-semibold hover:opacity-90 transition-all duration-200 whitespace-nowrap shadow-lg"
               >
-              Search Now
+                Search Now
               </button>
             </div>
 
-            <p className='text-white text-base'> <i className="ri-graduation-cap-line me-1"></i>  Popular Courses</p>
-            <div className='keywords-tags relative overflow-x-auto whitespace-nowrap py-3 max-w-full'>             
-              <a href='#' className='px-3 text-xs bg-white p-2 rounded-4xl mr-2 hover:bg-red-600 hover:text-white'>B.Tech</a>
-              <a href='#' className='px-3 text-xs bg-white p-2 rounded-4xl mr-2 hover:bg-red-600 hover:text-white'>MBA</a>
-              <a href='#' className='px-3 text-xs bg-white p-2 rounded-4xl mr-2 hover:bg-red-600 hover:text-white'>M.Tech</a>
-              <a href='#' className='px-3 text-xs bg-white p-2 rounded-4xl mr-2 hover:bg-red-600 hover:text-white'>MBBS</a>
-              <a href='#' className='px-3 text-xs bg-white p-2 rounded-4xl mr-2 hover:bg-red-600 hover:text-white'>B.Com</a>
-              <a href='#' className='px-3 text-xs bg-white p-2 rounded-4xl mr-2 hover:bg-red-600 hover:text-white'>B.Sc</a>
-              <a href='#' className='px-3 text-xs bg-white p-2 rounded-4xl mr-2 hover:bg-red-600 hover:text-white'>B.Sc (Nursing)</a>
-              <a href='#' className='px-3 text-xs bg-white p-2 rounded-4xl mr-2 hover:bg-red-600 hover:text-white'>BA</a>
+            <p className='text-gray-900 text-base'> <i className="ri-graduation-cap-line me-1 text-red-600"></i>  Popular Courses</p>
+            <div className='keywords-tags relative overflow-x-auto whitespace-nowrap py-4 sm:py-3 max-w-full mt-3'>
+              <a href='#' className='px-3 text-xs bg-none border border-gray-400 p-2 rounded-4xl mr-2 hover:bg-white '>B.Tech</a>
+              <a href='#' className='px-3 text-xs bg-none border border-gray-400 p-2 rounded-4xl mr-2 hover:bg-white'>MBA</a>
+              <a href='#' className='px-3 text-xs bg-none border border-gray-400 p-2 rounded-4xl mr-2 hover:bg-white'>M.Tech</a>
+              <a href='#' className='px-3 text-xs bg-none border border-gray-400 p-2 rounded-4xl mr-2 hover:bg-white'>MBBS</a>
+              <a href='#' className='px-3 text-xs bg-none border border-gray-400 p-2 rounded-4xl mr-2 hover:bg-white'>B.Com</a>
+              <a href='#' className='px-3 text-xs bg-none border border-gray-400 p-2 rounded-4xl mr-2 hover:bg-white'>B.Sc</a>
+              <a href='#' className='px-3 text-xs bg-none border border-gray-400 p-2 rounded-4xl mr-2 hover:bg-white'>B.Sc (Nursing)</a>
+              <a href='#' className='px-3 text-xs bg-none border border-gray-400 p-2 rounded-4xl mr-2 hover:bg-white'>BA</a>
             </div>
           </div>
         </div>

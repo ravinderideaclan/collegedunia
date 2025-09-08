@@ -4,7 +4,7 @@ import "./Navbar.css";
 
 export const TopNavbar = () => {
     return (
-        <div className=" headar-top bg-gray-800 py-2  md:flex hidden ">
+        <div className=" headar-top custom-bg-gray py-2  md:flex hidden ">
             {/* Top Navigation Links */}
 
             <div className="container mx-auto  md:flex flex-row justify-between ">

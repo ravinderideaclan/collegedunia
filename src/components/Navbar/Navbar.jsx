@@ -10,7 +10,7 @@ export const Navbar = () => {
   return (
     <>
       <TopNavbar />
-      <div className="main-navbar bg-gray-900 text-white shadow-sm relative z-40 sticky top-0 ">
+      <div className="main-navbar bg-white text-white shadow-sm relative z-40 sticky top-0 ">
         <div className="container mx-auto md:px-0 px-3">
           <nav className="flex items-center justify-between py-3">
             {/* Logo */}
@@ -19,15 +19,15 @@ export const Navbar = () => {
             </a>
             {/* Desktop Nav */}
             <ul className="hidden md:flex space-x-6 font-medium">
-              <li><a href="#" className="hover:text-red-600 transition text-sm">Home</a></li>
-              <li><a href="#" className="hover:text-red-600 transition text-sm">Explore Courses</a></li>
-              <li><a href="#" className="hover:text-red-600 transition text-sm">Management</a></li>
-              <li><a href="#" className="hover:text-red-600 transition text-sm">Engineering</a></li>
-              <li><a href="#" className="hover:text-red-600 transition text-sm">Science</a></li>
-              <li><a href="#" className="hover:text-red-600 transition text-sm">Study Abroad</a></li>
+              <li><a href="#" className="text-gray-900 hover:text-red-600 transition text-sm">Home</a></li>
+              <li><a href="#" className="text-gray-900 hover:text-red-600 transition text-sm">Explore Courses</a></li>
+              <li><a href="#" className="text-gray-900 hover:text-red-600 transition text-sm">Management</a></li>
+              <li><a href="#" className="text-gray-900 hover:text-red-600 transition text-sm">Engineering</a></li>
+              <li><a href="#" className="text-gray-900 hover:text-red-600 transition text-sm">Science</a></li>
+              <li><a href="#" className="text-gray-900 hover:text-red-600 transition text-sm">Study Abroad</a></li>
             </ul>
             {/* Right Icons */}
-            <div className="flex items-center space-x-4">
+            <div className="flex items-center space-x-4 text-gray-900">
               {/* Search Icon */}
               <button
                 className="text-xl hover:text-blue-400"
@@ -38,10 +38,10 @@ export const Navbar = () => {
 
               {/* User Dropdown */}
               <div className="relative group">
-                <button className="text-xl hover:text-gray-800 bg-red-600 hover:bg-white rounded-full w-10 h-10 ">
+                <button className=" text-white text-xl hover:text-white bg-red-600 hover:bg-gray-900 rounded-full w-10 h-10 ">
                   <i className="ri-user-3-line"></i>
                 </button>
-                <div className="absolute right-0   w-48 bg-white text-gray-800 rounded-lg shadow-lg z-50 opacity-0 group-hover:opacity-100 transition pointer-events-none group-hover:pointer-events-auto">
+                <div className="absolute right-0 shadow-lg border border-gray-200  w-48 bg-white text-gray-800 rounded-lg shadow-lg z-50 opacity-0 group-hover:opacity-100 transition pointer-events-none group-hover:pointer-events-auto">
                   <div className="p-4 border-b border-gray-200">
                     <p className="font-medium">Welcome!</p>
                     <p className="text-sm text-gray-500">Access your account</p>

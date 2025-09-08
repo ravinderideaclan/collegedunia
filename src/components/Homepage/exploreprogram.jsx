@@ -74,7 +74,7 @@ function ExplorProgram() {
   ];
 
   return (
-    <section className="explore-program ">
+    <section className="explore-program px-8">
       <div className="max-w-screen-xl mx-auto  border-b border-gray-200 py-15">
        
         <div className='flex flex-col mb-8'> 
