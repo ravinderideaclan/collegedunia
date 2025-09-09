@@ -2,10 +2,11 @@ import React, { useState } from "react";
 import "./Navbar.css";
 import TopNavbar from "./topNavbar.jsx";
 import "remixicon/fonts/remixicon.css";
+import { Link } from 'react-router-dom';
 
 export const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [searchOpen, setSearchOpen] = useState(false); // ✅ modal state
+  const [searchOpen, setSearchOpen] = useState(false);
 
   return (
     <>
@@ -19,8 +20,12 @@ export const Navbar = () => {
             </a>
             {/* Desktop Nav */}
             <ul className="hidden md:flex space-x-6 font-medium">
-              <li><a href="#" className="text-gray-900 hover:text-red-600 transition text-sm">Home</a></li>
-              <li><a href="#" className="text-gray-900 hover:text-red-600 transition text-sm">Explore Courses</a></li>
+              <li> <Link to="/" className="text-gray-900 hover:text-red-600 transition text-sm">
+                Home
+              </Link></li>
+              <li>  <Link to="/explorecolleges" className="text-gray-900 hover:text-red-600 transition text-sm">
+                Explore Colleges
+              </Link></li>
               <li><a href="#" className="text-gray-900 hover:text-red-600 transition text-sm">Management</a></li>
               <li><a href="#" className="text-gray-900 hover:text-red-600 transition text-sm">Engineering</a></li>
               <li><a href="#" className="text-gray-900 hover:text-red-600 transition text-sm">Science</a></li>

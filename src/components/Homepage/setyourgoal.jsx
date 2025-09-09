@@ -74,165 +74,165 @@ const SetYourGoal = () => {
 
                 <div className='relative pt-4'>
                     <div className='grid grid-cols-1 md:grid-cols-3 gap-3'>
-                            
-                            <div className='flex flex-col bg-gray-100 rounded-xl p-4'>
-                                <div className='upper-area flex justify-between w-full'>
-                                    <div className='flex flex-col'>
-                                        <h3 className='text-2xl font-semibold mb-2'>Engineering</h3>
-                                        <p className='text-gray-500'>6344 Colleges</p>
-                                    </div>
-                                    <div className='w-20 h-20 flex'>
-                                        <img className='w-full' src='../../src/assets/images/engineering1.svg' />
-                                    </div>
+
+                        <div className='flex flex-col bg-gray-100 rounded-xl p-4'>
+                            <div className='upper-area flex justify-between w-full'>
+                                <div className='flex flex-col'>
+                                    <h3 className='text-2xl font-semibold mb-2'>Engineering</h3>
+                                    <p className='text-gray-500'>6344 Colleges</p>
                                 </div>
-                                <div className='bottom-tags flex gap-1 pt-3'>
-                                    <a href='#' className='px-3 text-xs bg-none border border-gray-400 p-2 rounded-4xl mr-2 hover:bg-white '>
-                                  MBA/PGDM
-                                    </a>
-                                        <a href='#' className='px-3 text-xs bg-none border border-gray-400 p-2 rounded-4xl mr-2 hover:bg-white '>
-                               BBA/BMS
-                                    </a>
-        <a href='#' className='px-3 text-xs bg-none border border-gray-400 p-2 rounded-4xl mr-2 hover:bg-white '>
-                                Executive MBA
-                                    </a>
+                                <div className='w-20 h-20 flex'>
+                                    <img className='w-full' src='../../src/assets/images/engineering1.svg' />
                                 </div>
                             </div>
+                            <div className='bottom-tags flex gap-1 pt-3'>
+                                <a href='#' className='px-3 text-xs bg-none border border-gray-400 p-2 rounded-4xl mr-2 hover:bg-white '>
+                                    MBA/PGDM
+                                </a>
+                                <a href='#' className='px-3 text-xs bg-none border border-gray-400 p-2 rounded-4xl mr-2 hover:bg-white '>
+                                    BBA/BMS
+                                </a>
+                                <a href='#' className='px-3 text-xs bg-none border border-gray-400 p-2 rounded-4xl mr-2 hover:bg-white '>
+                                    Executive MBA
+                                </a>
+                            </div>
+                        </div>
 
-                            
-                                 <div className='flex flex-col bg-gray-100 rounded-xl p-4'>
-                                <div className='upper-area flex justify-between w-full'>
-                                    <div className='flex flex-col'>
-                                        <h3 className='text-2xl font-semibold mb-2'>Medical</h3>
-                                        <p className='text-gray-500'>1444 Colleges</p>
-                                    </div>
-                                    <div className='w-20 h-20 flex'>
-                                        <img className='w-full' src='../../src/assets/images/medical.svg' />
-                                    </div>
+
+                        <div className='flex flex-col bg-gray-100 rounded-xl p-4'>
+                            <div className='upper-area flex justify-between w-full'>
+                                <div className='flex flex-col'>
+                                    <h3 className='text-2xl font-semibold mb-2'>Medical</h3>
+                                    <p className='text-gray-500'>1444 Colleges</p>
                                 </div>
-                                <div className='bottom-tags flex gap-1 pt-3'>
-                                    <a href='#' className='px-3 text-xs bg-none border border-gray-400 p-2 rounded-4xl mr-2 hover:bg-white '>
+                                <div className='w-20 h-20 flex'>
+                                    <img className='w-full' src='../../src/assets/images/medical.svg' />
+                                </div>
+                            </div>
+                            <div className='bottom-tags flex gap-1 pt-3'>
+                                <a href='#' className='px-3 text-xs bg-none border border-gray-400 p-2 rounded-4xl mr-2 hover:bg-white '>
                                     BE/B.Tech
-                                    </a>
-                                        <a href='#' className='px-3 text-xs bg-none border border-gray-400 p-2 rounded-4xl mr-2 hover:bg-white '>
-                                Diploma in Engineering
-                                    </a>
-        <a href='#' className='px-3 text-xs bg-none border border-gray-400 p-2 rounded-4xl mr-2 hover:bg-white '>
-                                ME/M.Tech
-                                    </a>
+                                </a>
+                                <a href='#' className='px-3 text-xs bg-none border border-gray-400 p-2 rounded-4xl mr-2 hover:bg-white '>
+                                    Diploma in Engineering
+                                </a>
+                                <a href='#' className='px-3 text-xs bg-none border border-gray-400 p-2 rounded-4xl mr-2 hover:bg-white '>
+                                    ME/M.Tech
+                                </a>
+                            </div>
+                        </div>
+
+                        <div className='flex flex-col bg-gray-100 rounded-xl p-4'>
+                            <div className='upper-area flex justify-between w-full'>
+                                <div className='flex flex-col'>
+                                    <h3 className='text-2xl font-semibold mb-2'>Management</h3>
+                                    <p className='text-gray-500'>2644 Colleges</p>
+                                </div>
+                                <div className='w-20 h-20 flex'>
+                                    <img className='w-full' src='../../src/assets/images/management.svg' />
                                 </div>
                             </div>
-
-                                    <div className='flex flex-col bg-gray-100 rounded-xl p-4'>
-                                <div className='upper-area flex justify-between w-full'>
-                                    <div className='flex flex-col'>
-                                        <h3 className='text-2xl font-semibold mb-2'>Management</h3>
-                                        <p className='text-gray-500'>2644 Colleges</p>
-                                    </div>
-                                    <div className='w-20 h-20 flex'>
-                                        <img className='w-full' src='../../src/assets/images/management.svg' />
-                                    </div>
-                                </div>
-                                <div className='bottom-tags flex gap-1 pt-3'>
-                                    <a href='#' className='px-3 text-xs bg-none border border-gray-400 p-2 rounded-4xl mr-2 hover:bg-white '>
+                            <div className='bottom-tags flex gap-1 pt-3'>
+                                <a href='#' className='px-3 text-xs bg-none border border-gray-400 p-2 rounded-4xl mr-2 hover:bg-white '>
                                     BE/B.Tech
-                                    </a>
-                                        <a href='#' className='px-3 text-xs bg-none border border-gray-400 p-2 rounded-4xl mr-2 hover:bg-white '>
-                                Diploma in Engineering
-                                    </a>
-        <a href='#' className='px-3 text-xs bg-none border border-gray-400 p-2 rounded-4xl mr-2 hover:bg-white '>
-                                ME/M.Tech
-                                    </a>
-                                </div>
+                                </a>
+                                <a href='#' className='px-3 text-xs bg-none border border-gray-400 p-2 rounded-4xl mr-2 hover:bg-white '>
+                                    Diploma in Engineering
+                                </a>
+                                <a href='#' className='px-3 text-xs bg-none border border-gray-400 p-2 rounded-4xl mr-2 hover:bg-white '>
+                                    ME/M.Tech
+                                </a>
                             </div>
-
-
-
-                                  <div className='flex flex-col bg-gray-100 rounded-xl p-4'>
-                                <div className='upper-area flex justify-between w-full'>
-                                    <div className='flex flex-col'>
-                                        <h3 className='text-2xl font-semibold mb-2'>Law</h3>
-                                        <p className='text-gray-500'>5444 Colleges</p>
-                                    </div>
-                                    <div className='w-20 h-20 flex'>
-                                        <img className='w-full' src='../../src/assets/images/law.svg' />
-                                    </div>
-                                </div>
-                                <div className='bottom-tags flex gap-1 pt-3'>
-                                    <a href='#' className='px-3 text-xs bg-none border border-gray-400 p-2 rounded-4xl mr-2 hover:bg-white '>
-                                    BE/B.Tech
-                                    </a>
-                                        <a href='#' className='px-3 text-xs bg-none border border-gray-400 p-2 rounded-4xl mr-2 hover:bg-white '>
-                                Diploma in Engineering
-                                    </a>
-        <a href='#' className='px-3 text-xs bg-none border border-gray-400 p-2 rounded-4xl mr-2 hover:bg-white '>
-                                ME/M.Tech
-                                    </a>
-                                </div>
-                            </div>
-
-                              <div className='flex flex-col bg-gray-100 rounded-xl p-4'>
-                                <div className='upper-area flex justify-between w-full'>
-                                    <div className='flex flex-col'>
-                                        <h3 className='text-2xl font-semibold mb-2'>Medical</h3>
-                                        <p className='text-gray-500'>35444 Colleges</p>
-                                    </div>
-                                    <div className='w-20 h-20 flex'>
-                                        <img className='w-full' src='../../src/assets/images/science.svg' />
-                                    </div>
-                                </div>
-                                <div className='bottom-tags flex gap-1 pt-3'>
-                                    <a href='#' className='px-3 text-xs bg-none border border-gray-400 p-2 rounded-4xl mr-2 hover:bg-white '>
-                                    BE/B.Tech
-                                    </a>
-                                        <a href='#' className='px-3 text-xs bg-none border border-gray-400 p-2 rounded-4xl mr-2 hover:bg-white '>
-                                Diploma in Engineering
-                                    </a>
-        <a href='#' className='px-3 text-xs bg-none border border-gray-400 p-2 rounded-4xl mr-2 hover:bg-white '>
-                                ME/M.Tech
-                                    </a>
-                                </div>
-                            </div>
-
-
-
-                              <div className='flex flex-col bg-gray-100 rounded-xl p-4'>
-                                <div className='upper-area flex justify-between w-full'>
-                                    <div className='flex flex-col'>
-                                        <h3 className='text-2xl font-semibold mb-2'>Arts</h3>
-                                        <p className='text-gray-500'>6444 Colleges</p>
-                                    </div>
-                                    <div className='w-20 h-20 flex'>
-                                        <img className='w-full' src='../../src/assets/images/arts.svg' />
-                                    </div>
-                                </div>
-                                <div className='bottom-tags flex gap-1 pt-3'>
-                                    <a href='#' className='px-3 text-xs bg-none border border-gray-400 p-2 rounded-4xl mr-2 hover:bg-white '>
-                                    BE/B.Tech
-                                    </a>
-                                        <a href='#' className='px-3 text-xs bg-none border border-gray-400 p-2 rounded-4xl mr-2 hover:bg-white '>
-                                Diploma in Engineering
-                                    </a>
-        <a href='#' className='px-3 text-xs bg-none border border-gray-400 p-2 rounded-4xl mr-2 hover:bg-white '>
-                                ME/M.Tech
-                                    </a>
-                                </div>
-                            </div>
-
-
-                          
-
-
-
                         </div>
 
 
 
-                 
+                        <div className='flex flex-col bg-gray-100 rounded-xl p-4'>
+                            <div className='upper-area flex justify-between w-full'>
+                                <div className='flex flex-col'>
+                                    <h3 className='text-2xl font-semibold mb-2'>Law</h3>
+                                    <p className='text-gray-500'>5444 Colleges</p>
+                                </div>
+                                <div className='w-20 h-20 flex'>
+                                    <img className='w-full' src='../../src/assets/images/law.svg' />
+                                </div>
+                            </div>
+                            <div className='bottom-tags flex gap-1 pt-3'>
+                                <a href='#' className='px-3 text-xs bg-none border border-gray-400 p-2 rounded-4xl mr-2 hover:bg-white '>
+                                    BE/B.Tech
+                                </a>
+                                <a href='#' className='px-3 text-xs bg-none border border-gray-400 p-2 rounded-4xl mr-2 hover:bg-white '>
+                                    Diploma in Engineering
+                                </a>
+                                <a href='#' className='px-3 text-xs bg-none border border-gray-400 p-2 rounded-4xl mr-2 hover:bg-white '>
+                                    ME/M.Tech
+                                </a>
+                            </div>
+                        </div>
+
+                        <div className='flex flex-col bg-gray-100 rounded-xl p-4'>
+                            <div className='upper-area flex justify-between w-full'>
+                                <div className='flex flex-col'>
+                                    <h3 className='text-2xl font-semibold mb-2'>Medical</h3>
+                                    <p className='text-gray-500'>35444 Colleges</p>
+                                </div>
+                                <div className='w-20 h-20 flex'>
+                                    <img className='w-full' src='../../src/assets/images/science.svg' />
+                                </div>
+                            </div>
+                            <div className='bottom-tags flex gap-1 pt-3'>
+                                <a href='#' className='px-3 text-xs bg-none border border-gray-400 p-2 rounded-4xl mr-2 hover:bg-white '>
+                                    BE/B.Tech
+                                </a>
+                                <a href='#' className='px-3 text-xs bg-none border border-gray-400 p-2 rounded-4xl mr-2 hover:bg-white '>
+                                    Diploma in Engineering
+                                </a>
+                                <a href='#' className='px-3 text-xs bg-none border border-gray-400 p-2 rounded-4xl mr-2 hover:bg-white '>
+                                    ME/M.Tech
+                                </a>
+                            </div>
+                        </div>
+
+
+
+                        <div className='flex flex-col bg-gray-100 rounded-xl p-4'>
+                            <div className='upper-area flex justify-between w-full'>
+                                <div className='flex flex-col'>
+                                    <h3 className='text-2xl font-semibold mb-2'>Arts</h3>
+                                    <p className='text-gray-500'>6444 Colleges</p>
+                                </div>
+                                <div className='w-20 h-20 flex'>
+                                    <img className='w-full' src='../../src/assets/images/arts.svg' />
+                                </div>
+                            </div>
+                            <div className='bottom-tags flex gap-1 pt-3'>
+                                <a href='#' className='px-3 text-xs bg-none border border-gray-400 p-2 rounded-4xl mr-2 hover:bg-white '>
+                                    BE/B.Tech
+                                </a>
+                                <a href='#' className='px-3 text-xs bg-none border border-gray-400 p-2 rounded-4xl mr-2 hover:bg-white '>
+                                    Diploma in Engineering
+                                </a>
+                                <a href='#' className='px-3 text-xs bg-none border border-gray-400 p-2 rounded-4xl mr-2 hover:bg-white '>
+                                    ME/M.Tech
+                                </a>
+                            </div>
+                        </div>
 
 
 
 
-  
+
+
+                    </div>
+
+
+
+
+
+
+
+
+
                     {/* <Swiper
                         spaceBetween={30}
                         modules={[Navigation]} // ✅ use Navigation

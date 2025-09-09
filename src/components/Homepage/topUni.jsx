@@ -42,10 +42,11 @@ const TopUni = () => {
                         breakpoints={{
                             320: { slidesPerView: 1.1 },
                             640: { slidesPerView: 2 },
-                            1024: { slidesPerView: 3.2,
-                                     slidesPerGroup: 2,
+                            1024: {
+                                slidesPerView: 3.2,
+                                slidesPerGroup: 2,
 
-                             }, // ✅ remove fractional "3.2"
+                            }, // ✅ remove fractional "3.2"
                         }}
                     >
 

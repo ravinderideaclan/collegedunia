@@ -65,6 +65,8 @@ const TopColleges = () => {
           Top 10 Colleges
         </h2>
 
+
+
         <div className="relative">
           {/* Left Arrow */}
           {showLeft && (
@@ -82,18 +84,17 @@ const TopColleges = () => {
             ref={containerRef}
             className="flex space-x-3 overflow-x-auto scroll-smooth no-scrollbar"
           >
-         {collegeTags.map((tag, idx) => (
-  <button
-    key={idx}
-    className={`px-5 py-3 rounded-full text-sm font-medium whitespace-nowrap transition cursor-pointer ${
-      activecollegeTags === tag
-        ? "bg-red-600 text-white"
-        : "bg-gray-100 text-gray-700 hover:bg-red-600 hover:text-white"
-    }`}
-    onClick={() => setActivecollegeTags(tag)}   >
-    {tag}
-  </button>
-))}
+            {collegeTags.map((tag, idx) => (
+              <button
+                key={idx}
+                className={`px-5 py-3 rounded-full text-sm font-medium whitespace-nowrap transition cursor-pointer ${activecollegeTags === tag
+                  ? "bg-red-600 text-white"
+                  : "bg-gray-100 text-gray-700 hover:bg-red-600 hover:text-white"
+                  }`}
+                onClick={() => setActivecollegeTags(tag)}   >
+                {tag}
+              </button>
+            ))}
           </div>
           {/* Right Arrow */}
           {showRight && (
@@ -398,6 +399,9 @@ const TopColleges = () => {
             </tbody>
           </table>
         </div>
+
+
+
       </div>
     </section>
   );
