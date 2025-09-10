@@ -1,73 +1,91 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
+import ReactDOM from "react-dom";
 import { Link } from "react-router-dom";
+import "./ExploreColleges.css";
+
+const filtersData = {
+  Stream: [
+    "Engineering", "Medical", "Management", "Law", "Arts", "Science",
+    "Computer Applications", "Education", "Mass Communications",
+    "Vocational Courses", "Design", "Agricuatlure"
+  ],
+  State: ["Delhi", "Maharashtra", "Karnataka", "Tamil Nadu", "West Bengal"],
+  City: [
+    "Delhi", "Mumbai", "Bangalore", "Chennai", "Kolkata", "Hyderabad",
+    "Pune", "Jaipur", "Chandigarh", "Kangra", "Jammu", "Amritsar",
+    "Ludhiana", "Jalandhar"
+  ],
+  Course: ["B.Tech", "MBA", "MBBS", "BA", "B.Sc", "LLB"],
+  "Program Type": ["Full-time", "Part-time", "Online", "Distance Learning"],
+  "Entrance Exam": ["Jee Mains", "CAT", "MAT", "NEET", "CMAT", "XAT", "GATE", "CUET PG", "MHT CET", "CUET", "NEET PG"],
+  "Avg Fee Per Year": ["0-25k", "25-50K", "50-75k", "75K-1L", "1-2L", "Above 2L"],
+  "Course Type": ["Degree", "Diploma", "Certification"],
+  "Course Duration": ["2 Years", "3 Years", "4 Years", "1 Year"],
+  "College Category": ["IIT", "NIT", "AIIMS", "IIIT", "IIM", "NLU", "IISER", "NIEFT", "FDDI", "NIPER"]
+};
+
+const checkboxFilters = new Set([
+  "City",
+  "Program Type",
+  "Type of College", // Note: If "Type of College" should exist in data, add it to filtersData
+  "Entrance Exam",
+  "Course Type",
+  "Course Duration"
+]);
 
 const ExploreColleges = () => {
-  const [openFilter, setOpenFilter] = useState(null);
+  const buttonRefs = useRef({});
+  const scrollRef = useRef(null);
+  const [openDropdown, setOpenDropdown] = useState(null);
+  const [dropdownPosition, setDropdownPosition] = useState({ top: 0, left: 0 });
+  const [showLeftArrow, setShowLeftArrow] = useState(false);
+  const [showRightArrow, setShowRightArrow] = useState(true);
 
-  // Example filter data
-  const filters = {
-    Stream: [
-      "Engineering",
-      "Medical",
-      "Management",
-      "Law",
-      "Arts",
-      "Science",
-      "Computer Applications",
-      "Education",
-      "Mass Communications",
-      "Vocational Courses",
-      "Design",
-      "Agricuatlure",
-    ],
-    State: ["Delhi", "Maharashtra", "Karnataka", "Tamil Nadu", "West Bengal"],
-    City: [
-      "Delhi",
-      "Mumbai",
-      "Bangalore",
-      "Chennai",
-      "Kolkata",
-      "Hyderabad",
-      "Pune",
-      "Jaipur",
-      "Chandigarh",
-      "Kangra",
-      "Jammu",
-      "Amritsar",
-      "Ludhiana",
-      "Jalandhar",
-    ],
-    Course: ["B.Tech", "MBA", "MBBS", "BA", "B.Sc", "LLB"],
-    "Program Type": ["Full-time", "Part-time", "Online", "Distance Learning"],
-    "Entrance Exam": [
-      "Jee Mains",
-      "CAT",
-      "MAT",
-      "NEET",
-      "CMAT",
-      "XAT",
-      "GATE",
-      "CUET PG",
-      "MHT CET",
-      "CUET",
-      "NEET PG",
-    ],
-
-    "Avg Fee Per Year": ["0-25k", "25-50K", "50-75k", "75K-1L", "1-2L", "Abover 2L"],
-
-    "Course Type": ["Degree", "Diploma", "Certification"   ],
-
-    "Course Duration" :["2 Years", "3 Years", "4 Years", "1 Year",]
-
-
-
-
-
+  const handleToggle = (filter) => {
+    const button = buttonRefs.current[filter];
+    if (!button) return;
+    const rect = button.getBoundingClientRect();
+    setDropdownPosition({
+      top: rect.bottom + window.scrollY,
+      left: rect.left + window.scrollX,
+    });
+    setOpenDropdown(openDropdown === filter ? null : filter);
   };
 
-  const toggleFilter = (name) => {
-    setOpenFilter(openFilter === name ? null : name);
+  const scroll = (direction) => {
+    const container = scrollRef.current;
+    if (!container) return;
+
+    const scrollAmount = 200;
+    const newScrollLeft =
+      direction === "right"
+        ? container.scrollLeft + scrollAmount
+        : container.scrollLeft - scrollAmount;
+
+    container.scrollTo({ left: newScrollLeft, behavior: "smooth" });
   };
+
+  const handleScroll = () => {
+    const container = scrollRef.current;
+    if (!container) return;
+
+    setShowLeftArrow(container.scrollLeft > 0);
+    setShowRightArrow(container.scrollLeft + container.offsetWidth < container.scrollWidth - 10);
+  };
+
+  useEffect(() => {
+    const handleClickOutside = (e) => {
+      if (!e.target.closest(".dropdown-portal")) {
+        setOpenDropdown(null);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
+
+  useEffect(() => {
+    handleScroll(); // initial state
+  }, []);
 
   return (
     <>
@@ -126,143 +144,108 @@ const ExploreColleges = () => {
         </div>
       </section>
 
-      {/* Filter Section */}
-      <section className="header-list relative">
-        <div className="filter-area bg-gray-200">
-          <div className="max-w-screen-xl mx-auto py-3">
-            <div className="filter-area relative flex">
-              {/* All Filter Button */}
-              <div className="allfiter border-r border-gray-500 pr-3">
+      {/* Filters */}
+      <section className="relative bg-gray-200 py-3">
+        <div className="max-w-screen-xl mx-auto flex items-center relative px-4">
+          <div className="allfiter border-r border-gray-500 pr-3">
+            <button type="button" className="text-nowrap cursor-pointer text-white  bg-red-600 hover:bg-gray-800 hover:text-white font-medium rounded-full text-sm px-5 py-2.5 inline-flex items-center me-2 mb-2">
+              <i className="ri-equalizer-line me-3"></i> All Filter
+            </button>
+          </div>
+
+          <div className="filter-area relative flex items-center overflow-hidden scrollbar-hide px-8">
+            {showLeftArrow && (
+              <button onClick={() => scroll("left")} className="absolute left-1 z-10 bg-white shadow p-2 rounded-full w-10 h-10 border border-gray-400 cursor-pointer">
+                <i className="ri-arrow-left-s-line"></i>
+              </button>
+            )}
+
+            <div ref={scrollRef} onScroll={handleScroll} style={{ overflowX: "auto", whiteSpace: "nowrap" }} className="flex-1 px-8 scrollbar-hide">
+              {Object.keys(filtersData).map((filter) => (
                 <button
-                  type="button"
-                  className="cursor-pointer text-gray-900 bg-white hover:bg-red-600 hover:text-white focus:ring-4 focus:outline-none focus:ring-gray-100 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center me-2 mb-2"
+                  key={filter}
+                  ref={(el) => (buttonRefs.current[filter] = el)}
+                  onClick={() => handleToggle(filter)}
+                  className="me-3 bg-white border border-gray-300 hover:bg-blue-700 hover:text-white font-medium rounded-full text-sm px-4 py-2.5 inline-flex items-center whitespace-nowrap"
                 >
-                  <i className="ri-equalizer-line me-3"></i>
-                  All Filter
+                  {filter} <i className="ri-arrow-down-s-line ml-2"></i>
                 </button>
-              </div>
-
-              {/* Dynamic Filters */}
-              <div className="right-filter-on relative flex gap-3 px-4 flex-wrap">
-                {Object.keys(filters).map((filterName) => (
-                  <div key={filterName} className="relative">
-                    {/* Button */}
-                    <button
-                      onClick={() => toggleFilter(filterName)}
-                      className={`${
-                        openFilter === filterName
-                          ? "bg-blue-600 text-white"
-                          : "bg-white text-gray-900"
-                      } border border-gray-300 hover:bg-blue-700 hover:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2.5 inline-flex items-center`}
-                      type="button"
-                    >
-                      {filterName}
-                      <svg
-                        className={`w-2.5 h-2.5 ms-2 transition-transform duration-200 ${
-                          openFilter === filterName ? "rotate-180" : ""
-                        }`}
-                        aria-hidden="true"
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 10 6"
-                      >
-                        <path
-                          stroke="currentColor"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth="2"
-                          d="m1 1 4 4 4-4"
-                        />
-                      </svg>
-                    </button>
-
-                    {/* Dropdown */}
-                    {openFilter === filterName && (
-                      <div className="absolute left-0 mt-2 z-10 bg-white rounded-lg shadow w-80 overflow-hidden">
-                        {/* Heading */}
-                        <div className="px-4 py-3 border-b">
-                          <h3 className="text-base font-semibold text-gray-900">
-                            {filterName}
-                          </h3>
-                        </div>
-
-                        {/* Search */}
-                        <div className="filter-Search relative mx-3 my-4">
-                          <div className="w-6 h-6 flex items-center justify-center absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400">
-                            <svg
-                              xmlns="http://www.w3.org/2000/svg"
-                              className="h-5 w-5"
-                              viewBox="0 0 20 20"
-                              fill="currentColor"
-                            >
-                              <path
-                                fillRule="evenodd"
-                                d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
-                                clipRule="evenodd"
-                              />
-                            </svg>
-                          </div>
-                          <input
-                            type="text"
-                            placeholder={`Find ${filterName}`}
-                            className="w-full pl-12 pr-4 py-2 border border-gray-400 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-lg bg-white text-sm md:text-base"
-                          />
-                        </div>
-
-                        {/* Options */}
-                        <div className="max-h-56 overflow-y-auto px-3 py-3">
-                          {/* City & Entrance Exam → checkbox grid */}
-                          {filterName === "City" ||
-                          filterName === "Entrance Exam" ||  filterName === "Course Type" ? (
-                            <div className="grid grid-cols-2 gap-2">
-                              {filters[filterName].map((item, idx) => (
-                                <label
-                                  key={idx}
-                                  className="flex items-center space-x-2 cursor-pointer"
-                                >
-                                  <input
-                                    type="checkbox"
-                                    className="w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
-                                  />
-                                  <span className="text-sm text-gray-700">
-                                    {item}
-                                  </span>
-                                </label>
-                              ))}
-                            </div>
-                          ) : (
-                            <div className="flex flex-wrap gap-2">
-                              {filters[filterName].map((item, idx) => (
-                                <a
-                                  key={idx}
-                                  href="#"
-                                  className="px-3 py-1.5 text-sm font-medium text-gray-700 rounded-full border border-gray-400 hover:bg-gray-100"
-                                >
-                                  {item}
-                                </a>
-                              ))}
-                            </div>
-                          )}
-                        </div>
-
-                        {/* Footer */}
-                        <div className="sticky bottom-0 bg-white border-t flex justify-between px-4 py-2">
-                          <button className="text-sm text-blue-600 hover:underline">
-                            View All
-                          </button>
-                          <button className="text-sm text-red-600 hover:underline">
-                            Clear
-                          </button>
-                        </div>
-                      </div>
-                    )}
-                  </div>
-                ))}
-              </div>
+              ))}
             </div>
+
+            {showRightArrow && (
+              <button onClick={() => scroll("right")} className="absolute right-1 z-10 bg-white shadow p-2 rounded-full w-10 h-10 border border-gray-400 cursor-pointer">
+                <i className="ri-arrow-right-s-line"></i>
+              </button>
+            )}
           </div>
         </div>
       </section>
+
+      {/* Dropdown Portal */}
+      {openDropdown &&
+        ReactDOM.createPortal(
+          <div
+            className="dropdown-portal dropdown-transition w-80 rounded-lg"
+            style={{
+              position: "absolute",
+              top: dropdownPosition.top,
+              left: dropdownPosition.left,
+              background: "#fff",
+              border: "1px solid #ccc",
+              padding: 10,
+              zIndex: 9999,
+            }}
+          >
+            <div className="px-4 py-3 border-b">
+              <h3 className="text-base font-semibold text-gray-900">{openDropdown}</h3>
+            </div>
+
+            <div className="filter-Search relative mx-3 my-4">
+
+              <i class="ri-search-2-line absolute text-base text-gray-500 top-2 left-2                                    "></i>
+              <input
+                type="text"
+                placeholder={`Find ${openDropdown}`}
+                className="w-full pl-4 pr-4 py-2 border border-gray-400 rounded-lg focus:outline-none text-base pl-8"
+              />
+            </div>
+
+            <div className="max-h-56 overflow-y-auto px-3 py-3">
+              {checkboxFilters.has(openDropdown) ? (
+                <div className="grid grid-cols-2 gap-2">
+                  {filtersData[openDropdown].map((item, idx) => (
+                    <label key={idx} className="flex items-center space-x-2 cursor-pointer">
+                      <input
+                        type="checkbox"
+                        className="w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
+                      />
+                      <span className="text-sm text-gray-700">{item}</span>
+                    </label>
+                  ))}
+                </div>
+              ) : (
+                <div className="flex flex-wrap gap-2">
+                  {filtersData[openDropdown].map((item, idx) => (
+                    <a
+                      key={idx}
+                      href="#"
+                      className="px-3 py-1.5 text-sm font-medium text-gray-700 rounded-full border border-gray-400 hover:bg-gray-100"
+                    >
+                      {item}
+                    </a>
+                  ))}
+                </div>
+              )}
+            </div>
+
+            <div className="sticky bottom-0 bg-white border-t flex justify-between px-4 py-2">
+              <button className="text-sm text-blue-600 hover:underline">View All</button>
+              <button className="text-sm text-red-600 hover:underline">Clear</button>
+            </div>
+          </div>,
+          document.body
+        )}
     </>
   );
 };

@@ -101,6 +101,9 @@ function Herosection() {
               <div className="flex-1">
                 <div className="relative">
                   <div className="w-6 h-6 flex items-center justify-center absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400">
+                    
+                    
+                    
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       className="h-5 w-5"
