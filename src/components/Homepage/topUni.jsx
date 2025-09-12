@@ -11,9 +11,9 @@ const TopUni = () => {
     const [isEnd, setIsEnd] = useState(false);
 
     return (
-        <section className="top-uni-list relative custom-bg-gray px-8">
+        <section className="top-uni-list relative bg-gray-100 px-8">
             <div className="max-w-screen-xl mx-auto py-16">
-                <h2 className="text-2xl md:text-3xl text-white font-bold mb-8">
+                <h2 className="text-2xl md:text-3xl text-gray-900 font-bold mb-8">
                     Top Universities/Colleges
                 </h2>
                 <div className="relative">
@@ -38,7 +38,7 @@ const TopUni = () => {
                             setIsEnd(swiper.isEnd);
                         }}
                         watchOverflow={true}
-                        className="mySwiper"
+                        className="mySwiper py-4"
                         breakpoints={{
                             320: { slidesPerView: 1.1 },
                             640: { slidesPerView: 2 },
@@ -51,8 +51,8 @@ const TopUni = () => {
                     >
 
                         {[1, 2, 3, 4, 5, 6].map((num) => (
-                            <SwiperSlide key={num}>
-                                <div className="bg-white border border-gray-300 hover:shadow-md transition-shadow p-4  w-full flex flex-col rounded-lg">
+                            <SwiperSlide className='py-2' key={num}>
+                                <div className=" bg-white border border-gray-300 hover:shadow-md transition-shadow p-4  w-full flex flex-col rounded-xlg">
                                     <div className='flex flex-row justify-between w-full border-b border-gray-200 pb-3'>
                                         <div className='flex flex-col'>
                                             <a href='#' className='text-base font-bold line-clamp-2 hover:text-red-600 mb-2'>

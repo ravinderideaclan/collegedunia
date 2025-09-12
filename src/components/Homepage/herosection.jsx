@@ -122,13 +122,13 @@ function Herosection() {
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
                     placeholder="Search Colleges, Exams, Courses..."
-                    className="w-full pl-12 pr-4 py-4 border border-gray-400 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-lg bg-white text-sm md:text-base"
+                    className="w-full pl-12 pr-4 py-4 border border-gray-400 rounded-full focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent text-lg bg-white text-sm md:text-base"
                   />
                 </div>
               </div>
               <button
                 onClick={handleSearch}
-                className="bg-gradient-to-r from-blue-600 to-red-500 text-white px-8 py-4 rounded-lg font-semibold hover:opacity-90 transition-all duration-200 whitespace-nowrap shadow-lg"
+                className="bg-gray-900 text-white px-8 py-4 rounded-full font-semibold hover:opacity-90 transition-all duration-200 whitespace-nowrap shadow-lg"
               >
                 Search Now
               </button>

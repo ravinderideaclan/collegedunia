@@ -24,6 +24,7 @@ const filtersData = {
   "College Category": ["IIT", "NIT", "AIIMS", "IIIT", "IIM", "NLU", "IISER", "NIEFT", "FDDI", "NIPER"]
 };
 
+
 const checkboxFilters = new Set([
   "City",
   "Program Type",
@@ -32,6 +33,371 @@ const checkboxFilters = new Set([
   "Course Type",
   "Course Duration"
 ]);
+
+
+
+const collegeData = [
+  {
+    rank: 1,
+    logo: "../../src/assets/images/logo/iima.webp",
+    name: "IIMA - Indian Institute of Management",
+    location: "Ahmedabad, Gujarat",
+    course: "MBA/PGDM",
+    fee: "27,50,000",
+    avgPackage: "34,50,000",
+    highestPackage: "45,00,000",
+    rating: "4.5",
+    reviewCount: 120
+  },
+  {
+    rank: 2,
+    logo: "../../src/assets/images/logo/iitd.webp",
+    name: "IIT Delhi",
+    location: "Delhi",
+    course: "B.Tech",
+    fee: "10,00,000",
+    avgPackage: "20,00,000",
+    highestPackage: "30,00,000",
+    rating: "4.8",
+    reviewCount: 200
+  },
+  {
+    rank: 3,
+    logo: "../../src/assets/images/logo/iimb.webp",
+    name: "IIM Bangalore",
+    location: "Bangalore, Karnataka",
+    course: "MBA/PGDM",
+    fee: "24,50,000",
+    avgPackage: "33,00,000",
+    highestPackage: "48,00,000",
+    rating: "4.7",
+    reviewCount: 150
+  },
+  {
+    rank: 4,
+    logo: "../../src/assets/images/logo/iitb.webp",
+    name: "IIT Bombay",
+    location: "Mumbai, Maharashtra",
+    course: "B.Tech",
+    fee: "9,00,000",
+    avgPackage: "18,50,000",
+    highestPackage: "32,00,000",
+    rating: "4.6",
+    reviewCount: 180
+  },
+  {
+    rank: 5,
+    logo: "../../src/assets/images/logo/iimc.webp",
+    name: "IIM Calcutta",
+    location: "Kolkata, West Bengal",
+    course: "MBA/PGDM",
+    fee: "27,00,000",
+    avgPackage: "32,50,000",
+    highestPackage: "46,00,000",
+    rating: "4.5",
+    reviewCount: 110
+  },
+  {
+    rank: 6,
+    logo: "../../src/assets/images/logo/iitm.webp",
+    name: "IIT Madras",
+    location: "Chennai, Tamil Nadu",
+    course: "B.Tech",
+    fee: "8,50,000",
+    avgPackage: "17,00,000",
+    highestPackage: "29,00,000",
+    rating: "4.4",
+    reviewCount: 170
+  },
+  {
+    rank: 7,
+    logo: "../../src/assets/images/logo/iitk.webp",
+    name: "IIT Kanpur",
+    location: "Kanpur, Uttar Pradesh",
+    course: "B.Tech",
+    fee: "9,50,000",
+    avgPackage: "16,50,000",
+    highestPackage: "28,00,000",
+    rating: "4.3",
+    reviewCount: 140
+  },
+  {
+    rank: 8,
+    logo: "../../src/assets/images/logo/iitr.webp",
+    name: "IIT Roorkee",
+    location: "Roorkee, Uttarakhand",
+    course: "B.Tech",
+    fee: "8,00,000",
+    avgPackage: "15,00,000",
+    highestPackage: "26,00,000",
+    rating: "4.2",
+    reviewCount: 130
+  },
+  {
+    rank: 9,
+    logo: "../../src/assets/images/logo/fms.webp",
+    name: "FMS Delhi",
+    location: "Delhi",
+    course: "MBA",
+    fee: "2,00,000",
+    avgPackage: "25,00,000",
+    highestPackage: "40,00,000",
+    rating: "4.9",
+    reviewCount: 210
+  },
+  {
+    rank: 10,
+    logo: "../../src/assets/images/logo/spjimr.webp",
+    name: "SPJIMR Mumbai",
+    location: "Mumbai, Maharashtra",
+    course: "PGDM",
+    fee: "20,00,000",
+    avgPackage: "24,00,000",
+    highestPackage: "36,00,000",
+    rating: "4.6",
+    reviewCount: 100
+  },
+  {
+    rank: 11,
+    logo: "../../src/assets/images/logo/iift.webp",
+    name: "IIFT Delhi",
+    location: "Delhi",
+    course: "MBA (IB)",
+    fee: "21,00,000",
+    avgPackage: "23,00,000",
+    highestPackage: "35,00,000",
+    rating: "4.4",
+    reviewCount: 90
+  },
+  {
+    rank: 12,
+    logo: "../../src/assets/images/logo/nitie.webp",
+    name: "NITIE Mumbai (IIM Mumbai)",
+    location: "Mumbai, Maharashtra",
+    course: "PGDIM",
+    fee: "19,00,000",
+    avgPackage: "22,00,000",
+    highestPackage: "33,00,000",
+    rating: "4.5",
+    reviewCount: 85
+  },
+  {
+    rank: 13,
+    logo: "../../src/assets/images/logo/jbims.webp",
+    name: "JBIMS Mumbai",
+    location: "Mumbai, Maharashtra",
+    course: "MBA",
+    fee: "6,00,000",
+    avgPackage: "21,00,000",
+    highestPackage: "30,00,000",
+    rating: "4.6",
+    reviewCount: 88
+  },
+  {
+    rank: 14,
+    logo: "../../src/assets/images/logo/xlri.webp",
+    name: "XLRI Jamshedpur",
+    location: "Jamshedpur, Jharkhand",
+    course: "PGDM (BM/HRM)",
+    fee: "23,00,000",
+    avgPackage: "26,00,000",
+    highestPackage: "40,00,000",
+    rating: "4.7",
+    reviewCount: 160
+  },
+  {
+    rank: 15,
+    logo: "../../src/assets/images/logo/iims.webp",
+    name: "IIM Shillong",
+    location: "Shillong, Meghalaya",
+    course: "MBA",
+    fee: "18,00,000",
+    avgPackage: "19,00,000",
+    highestPackage: "27,00,000",
+    rating: "4.3",
+    reviewCount: 75
+  },
+  {
+    rank: 16,
+    logo: "../../src/assets/images/logo/iiml.webp",
+    name: "IIM Lucknow",
+    location: "Lucknow, Uttar Pradesh",
+    course: "MBA/PGDM",
+    fee: "23,50,000",
+    avgPackage: "26,00,000",
+    highestPackage: "38,00,000",
+    rating: "4.6",
+    reviewCount: 140
+  },
+  {
+    rank: 17,
+    logo: "../../src/assets/images/logo/nmims.webp",
+    name: "NMIMS Mumbai",
+    location: "Mumbai, Maharashtra",
+    course: "MBA",
+    fee: "21,90,000",
+    avgPackage: "19,50,000",
+    highestPackage: "29,00,000",
+    rating: "4.2",
+    reviewCount: 100
+  },
+  {
+    rank: 18,
+    logo: "../../src/assets/images/logo/sibm.webp",
+    name: "SIBM Pune",
+    location: "Pune, Maharashtra",
+    course: "MBA",
+    fee: "21,00,000",
+    avgPackage: "18,00,000",
+    highestPackage: "28,00,000",
+    rating: "4.3",
+    reviewCount: 98
+  },
+  {
+    rank: 19,
+    logo: "../../src/assets/images/logo/mica.webp",
+    name: "MICA Ahmedabad",
+    location: "Ahmedabad, Gujarat",
+    course: "PGDM (C)",
+    fee: "21,00,000",
+    avgPackage: "16,00,000",
+    highestPackage: "25,00,000",
+    rating: "4.1",
+    reviewCount: 70
+  },
+  {
+    rank: 20,
+    logo: "../../src/assets/images/logo/tapmi.webp",
+    name: "TAPMI Manipal",
+    location: "Manipal, Karnataka",
+    course: "PGDM",
+    fee: "18,00,000",
+    avgPackage: "14,50,000",
+    highestPackage: "23,00,000",
+    rating: "4.0",
+    reviewCount: 68
+  },
+  {
+    rank: 21,
+    logo: "../../src/assets/images/logo/mdi.webp",
+    name: "MDI Gurgaon",
+    location: "Gurgaon, Haryana",
+    course: "PGDM",
+    fee: "23,00,000",
+    avgPackage: "24,00,000",
+    highestPackage: "35,00,000",
+    rating: "4.6",
+    reviewCount: 150
+  },
+  {
+    rank: 22,
+    logo: "../../src/assets/images/logo/iimk.webp",
+    name: "IIM Kozhikode",
+    location: "Kozhikode, Kerala",
+    course: "MBA/PGDM",
+    fee: "22,50,000",
+    avgPackage: "25,00,000",
+    highestPackage: "36,00,000",
+    rating: "4.7",
+    reviewCount: 135
+  },
+  {
+    rank: 23,
+    logo: "../../src/assets/images/logo/sjmsom.webp",
+    name: "SJMSOM, IIT Bombay",
+    location: "Mumbai, Maharashtra",
+    course: "MBA",
+    fee: "12,00,000",
+    avgPackage: "22,00,000",
+    highestPackage: "34,00,000",
+    rating: "4.4",
+    reviewCount: 80
+  },
+  {
+    rank: 24,
+    logo: "../../src/assets/images/logo/vgsom.webp",
+    name: "VGSoM, IIT Kharagpur",
+    location: "Kharagpur, West Bengal",
+    course: "MBA",
+    fee: "11,00,000",
+    avgPackage: "20,00,000",
+    highestPackage: "31,00,000",
+    rating: "4.3",
+    reviewCount: 77
+  },
+  {
+    rank: 25,
+    logo: "../../src/assets/images/logo/iimt.webp",
+    name: "IIM Trichy",
+    location: "Tiruchirappalli, Tamil Nadu",
+    course: "MBA",
+    fee: "18,00,000",
+    avgPackage: "17,50,000",
+    highestPackage: "26,00,000",
+    rating: "4.2",
+    reviewCount: 60
+  },
+  {
+    rank: 26,
+    logo: "../../src/assets/images/logo/ximb.webp",
+    name: "XIMB Bhubaneswar",
+    location: "Bhubaneswar, Odisha",
+    course: "MBA",
+    fee: "20,00,000",
+    avgPackage: "17,00,000",
+    highestPackage: "25,00,000",
+    rating: "4.1",
+    reviewCount: 74
+  },
+  {
+    rank: 27,
+    logo: "../../src/assets/images/logo/iimraipur.webp",
+    name: "IIM Raipur",
+    location: "Raipur, Chhattisgarh",
+    course: "MBA",
+    fee: "18,00,000",
+    avgPackage: "16,50,000",
+    highestPackage: "24,00,000",
+    rating: "4.0",
+    reviewCount: 55
+  },
+  {
+    rank: 28,
+    logo: "../../src/assets/images/logo/iimranchi.webp",
+    name: "IIM Ranchi",
+    location: "Ranchi, Jharkhand",
+    course: "MBA",
+    fee: "18,00,000",
+    avgPackage: "16,80,000",
+    highestPackage: "25,50,000",
+    rating: "4.1",
+    reviewCount: 59
+  },
+  {
+    rank: 29,
+    logo: "../../src/assets/images/logo/imt.webp",
+    name: "IMT Ghaziabad",
+    location: "Ghaziabad, Uttar Pradesh",
+    course: "PGDM",
+    fee: "19,00,000",
+    avgPackage: "15,50,000",
+    highestPackage: "24,00,000",
+    rating: "4.2",
+    reviewCount: 65
+  },
+  {
+    rank: 30,
+    logo: "../../src/assets/images/logo/gim.webp",
+    name: "GIM Goa",
+    location: "Panaji, Goa",
+    course: "PGDM",
+    fee: "17,50,000",
+    avgPackage: "14,00,000",
+    highestPackage: "22,00,000",
+    rating: "4.0",
+    reviewCount: 61
+  }
+];
 
 const ExploreColleges = () => {
   const buttonRefs = useRef({});
@@ -86,6 +452,9 @@ const ExploreColleges = () => {
   useEffect(() => {
     handleScroll(); // initial state
   }, []);
+
+
+  const [viewMode, setViewMode] = useState("table");
 
   return (
     <>
@@ -166,7 +535,7 @@ const ExploreColleges = () => {
                   key={filter}
                   ref={(el) => (buttonRefs.current[filter] = el)}
                   onClick={() => handleToggle(filter)}
-                  className="me-3 bg-white border border-gray-300 hover:bg-blue-700 hover:text-white font-medium rounded-full text-sm px-4 py-2.5 inline-flex items-center whitespace-nowrap"
+                  className="cursor-pointer me-3 bg-white border border-gray-300 hover:bg-gray-900 hover:text-white font-medium rounded-full text-sm px-4 py-2.5 inline-flex items-center whitespace-nowrap"
                 >
                   {filter} <i className="ri-arrow-down-s-line ml-2"></i>
                 </button>
@@ -246,6 +615,167 @@ const ExploreColleges = () => {
           </div>,
           document.body
         )}
+
+
+
+
+
+      {/* Filter Table */}
+
+      <section className="college-data mt-5">
+        <div className="max-w-screen-xl mx-auto flex items-center relative px-4">
+
+          <div className="bg-gray-100 rounded-lg p-5 w-full">
+
+            <div className="header-data-inof flex justify-between">
+              <div className="foundcollege">
+                <p className="text-base font-semibold"><i className="ri-school-line me-1"></i> Found 20587 Colleges</p>
+              </div>
+              <div className="sort-list-info flex gap-3 ">
+
+                <p>Sort By</p>
+                <div className="flex items-center ">
+                  <input id="popularity" type="radio" value="rating"
+                    name="sort" className="w-4 h-4 text-red-600 bg-gray-100 border-gray-300 focus:ring-red-500 "></input>
+                  <label for="popularity" className="ms-2 text-sm font-medium text-gray-600 ">Popularity</label>
+                </div>
+                <div className="flex items-center">
+                  <input
+                    id="rating"
+                    type="radio" value="rating"
+                    name="sort"
+                    className="w-4 h-4 text-red-600 bg-gray-100 border-gray-300 focus:ring-red-500 "></input>
+                  <label for="rating" className="ms-2 text-sm font-medium text-gray-600 ">Rating</label>
+                </div>
+
+                <div className="flex justify-end gap-4 ">
+                  <button
+                    onClick={() => setViewMode("grid")}
+                    className={` text-xl cursor-pointer rounded ${viewMode === "grid" ? "text-red-600" : ""}`}
+                  >
+                    <i class="ri-archive-drawer-line"></i>
+                  </button>
+                  <button
+                    onClick={() => setViewMode("table")}
+                    className={`text-xl cursor-pointer rounded ${viewMode === "table" ? "text-red-600" : ""}`}
+                  >
+                    <i class="ri-grid-line"></i>
+                  </button>
+                </div>
+
+
+              </div>
+            </div>
+
+
+
+
+            {viewMode === "table" ? (
+              // Your existing table JSX goes here
+              <div className="relative overflow-x-auto mt-8 rounded-lg border border-gray-300">
+                <table className="w-full text-sm text-left text-gray-500 border-collapse">
+                  <thead className="text-xs text-gray-700 uppercase">
+                    <tr className="border-b border-gray-700 bg-gray-900 text-white">
+                      <th className="px-6 py-5 border-r border-gray-700">CD Rank</th>
+                      <th className="px-6 py-5 border-r border-gray-700">College</th>
+                      <th className="px-6 py-5 border-r border-gray-700">Courses</th>
+                      <th className="px-6 py-5 border-r border-gray-700">Placement</th>
+                      <th className="px-6 py-5">User Reviews</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {/* Repeat same rows or map over data */}
+                    {collegeData.map((college, idx) => (
+                      <tr key={idx} className="bg-white border-b border-gray-200">
+                        <td className="px-6 py-4 font-medium text-gray-600 whitespace-nowrap border-r border-gray-200 align-top">
+                          <p>#{college.rank}</p>
+                        </td>
+                        <td className="px-6 py-4 font-medium text-gray-600 whitespace-nowrap border-r border-gray-200 align-top">
+                          <div className="flex">
+                            <img className="w-10 h-10 rounded-full p-1 ring-1 ring-gray-300" src={college.logo} alt="Logo" />
+                            <div className="ps-3">
+                              <div className="text-base font-semibold">
+                                <a className="text-blue-500" href="#">{college.name}</a>
+                              </div>
+                              <div className="font-normal text-gray-500 text-xs">{college.location} | UGC Approved</div>
+                            </div>
+                          </div>
+                        </td>
+                        <td className="px-6 py-4 text-gray-900 whitespace-nowrap border-r border-gray-200 align-top">
+                          <div className="fee flex flex-col">
+                            <a className="text-green-600 text-base font-semibold" href="#">₹ {college.fee}</a>
+                            <span className="text-gray-500 text-xs">{college.course}</span>
+                          </div>
+                        </td>
+                        <td className="px-6 py-4 text-gray-900 whitespace-nowrap border-r border-gray-200 align-top">
+                          <div className="avgpackage flex flex-col mb-2">
+                            <a className="text-green-600 text-base font-semibold" href="#">₹ {college.avgPackage}</a>
+                            <span className="text-gray-500 text-xs">Average Package</span>
+                          </div>
+                          <div className="avgpackage flex flex-col">
+                            <a className="text-green-600 text-base font-semibold" href="#">₹ {college.highestPackage}</a>
+                            <span className="text-gray-500 text-xs">Highest Package</span>
+                          </div>
+                        </td>
+                        <td className="px-6 py-4 text-gray-900 whitespace-nowrap align-top">
+                          <div className="rating flex flex-col">
+                            <div className="text-base">
+                              <i className="ri-star-fill text-yellow-400"></i>
+                              <span className="text-gray-700">{college.rating}/5</span>
+                            </div>
+                            <span className="text-gray-500 text-xs">Based on {college.reviewCount} reviews</span>
+                          </div>
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            ) : (
+              // Grid View
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
+                {collegeData.map((college, idx) => (
+                  <div key={idx} className="bg-white p-4 rounded-lg shadow border border-gray-400 transition hover:shadow-lg">
+                    <div className="flex items-center mb-4">
+                      <img className="w-12 h-12 rounded-full p-1 ring-1 ring-gray-300" src={college.logo} alt="Logo" />
+                      <div className="ms-3">
+                        <h2 className="text-lg font-semibold text-blue-600">{college.name}</h2>
+                        <p className="text-sm text-gray-500">{college.location}</p>
+                      </div>
+                    </div>
+                    <div className="mb-3">
+                      <span className="text-sm text-gray-600">Courses:</span>
+                      <p className="text-gray-900 font-medium">{college.course}</p>
+                    </div>
+                    <div className="mb-3">
+                      <span className="text-sm text-gray-600">Avg Package:</span>
+                      <p className="text-green-600 font-semibold">₹ {college.avgPackage}</p>
+                    </div>
+                    <div className="mb-3">
+                      <span className="text-sm text-gray-600">Highest Package:</span>
+                      <p className="text-green-600 font-semibold">₹ {college.highestPackage}</p>
+                    </div>
+                    <div className="rating flex items-center">
+                      <i className="ri-star-fill text-yellow-400"></i>
+                      <span className="text-gray-700 ms-2">{college.rating}/5 ({college.reviewCount} reviews)</span>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            )}
+
+          </div>
+        </div>
+      </section>
+
+
+
+
+
+
+
+
+
     </>
   );
 };

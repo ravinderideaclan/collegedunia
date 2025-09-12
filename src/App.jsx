@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'
 import Navbar from './components/Navbar/Navbar'
 import Homepage from './components/Homepage/homepage'
 import ExploreColleges from './pages/explorecolleges'
+import Footer from './components/Footer/footer'
 
 
 
@@ -17,6 +18,8 @@ function App() {
         <Route path="/" element={<Homepage />} />
         <Route path="/explorecolleges" element={<ExploreColleges />} />
       </Routes>
+
+      <Footer />
 
 
 

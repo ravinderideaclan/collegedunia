@@ -11,7 +11,7 @@ export const Navbar = () => {
   return (
     <>
       <TopNavbar />
-      <div className="main-navbar bg-white text-white shadow-sm relative z-40 sticky top-0 ">
+      <div className="main-navbar bg-white text-white shadow-sm relative z-90 sticky top-0 ">
         <div className="container mx-auto md:px-0 px-3">
           <nav className="flex items-center justify-between py-3">
             {/* Logo */}

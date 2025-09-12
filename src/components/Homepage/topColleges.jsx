@@ -60,13 +60,10 @@ const TopColleges = () => {
 
   return (
     <section className="topcolleges px-8">
-      <div className="max-w-screen-xl mx-auto border-b border-gray-200 py-15">
+      <div className="max-w-screen-xl mx-auto  py-15">
         <h2 className="text-2xl md:text-3xl text-gray-800 font-bold mb-5">
           Top 10 Colleges
         </h2>
-
-
-
         <div className="relative">
           {/* Left Arrow */}
           {showLeft && (

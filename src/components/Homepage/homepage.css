@@ -7,6 +7,30 @@
   display: none; /* Chrome, Safari, Opera */
 }
 
+.explore-card-header.flex {
+	position: relative;
+	height: 167px;
+	display: flex;
+	align-items: center;
+	padding: 0 15px;
+	overflow: hidden;
+	z-index: 99999;
+}
+
+.explore-card-header::after {
+	content: "";
+	background: #fff;
+	height: 450px;
+	width: 799px;
+	position: absolute;
+	border-radius: 100%;
+	bottom: 5px;
+	left: -196px;
+	z-index: -11;
+}
+
+
+
 @media (max-width: 768px) {
 
 .sm\:bg-custom-gray{
