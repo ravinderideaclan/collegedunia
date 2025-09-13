@@ -58,7 +58,7 @@ const SetYourGoal = () => {
     return (
         // Study Goal Section with Category Cards
         <section className=" goal-section px-8">
-            <div className="max-w-screen-xl mx-auto px-0 border-b border-gray-200 py-15">
+            <div className="max-w-screen-xl mx-auto px-0  py-15 border-b border-gray-200 ">
                 <div className="flex justify-between items-center mb-6 items-top">
                     <div className='flex flex-col'>
                         <h2 className="text-2xl md:text-3xl text-gray-800 font-bold mb-2">
@@ -109,7 +109,7 @@ const SetYourGoal = () => {
                                     <img className='w-full' src='../../src/assets/images/medical.svg' />
                                 </div>
                             </div>
-                            <div className='bottom-tags flex gap-1 pt-3'>
+                            <div className='bottom-tags flex gap-1 pt-3 flex-wrap'>
                                 <a href='#' className='px-3 text-xs bg-none border border-gray-400 p-2 rounded-4xl mr-2 hover:bg-white '>
                                     BE/B.Tech
                                 </a>
@@ -132,7 +132,7 @@ const SetYourGoal = () => {
                                     <img className='w-full' src='../../src/assets/images/management.svg' />
                                 </div>
                             </div>
-                            <div className='bottom-tags flex gap-1 pt-3'>
+                            <div className='bottom-tags flex gap-1 pt-3 flex-wrap'>
                                 <a href='#' className='px-3 text-xs bg-none border border-gray-400 p-2 rounded-4xl mr-2 hover:bg-white '>
                                     BE/B.Tech
                                 </a>
@@ -157,7 +157,7 @@ const SetYourGoal = () => {
                                     <img className='w-full' src='../../src/assets/images/law.svg' />
                                 </div>
                             </div>
-                            <div className='bottom-tags flex gap-1 pt-3'>
+                            <div className='bottom-tags flex gap-1 pt-3 flex-wrap'>
                                 <a href='#' className='px-3 text-xs bg-none border border-gray-400 p-2 rounded-4xl mr-2 hover:bg-white '>
                                     BE/B.Tech
                                 </a>
@@ -180,7 +180,7 @@ const SetYourGoal = () => {
                                     <img className='w-full' src='../../src/assets/images/science.svg' />
                                 </div>
                             </div>
-                            <div className='bottom-tags flex gap-1 pt-3'>
+                            <div className='bottom-tags flex gap-1 pt-3 flex-wrap'>
                                 <a href='#' className='px-3 text-xs bg-none border border-gray-400 p-2 rounded-4xl mr-2 hover:bg-white '>
                                     BE/B.Tech
                                 </a>
@@ -205,7 +205,7 @@ const SetYourGoal = () => {
                                     <img className='w-full' src='../../src/assets/images/arts.svg' />
                                 </div>
                             </div>
-                            <div className='bottom-tags flex gap-1 pt-3'>
+                            <div className='bottom-tags flex gap-1 pt-3 flex-wrap'>
                                 <a href='#' className='px-3 text-xs bg-none border border-gray-400 p-2 rounded-4xl mr-2 hover:bg-white '>
                                     BE/B.Tech
                                 </a>

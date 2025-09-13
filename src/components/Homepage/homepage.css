@@ -9,7 +9,7 @@
 
 .explore-card-header.flex {
 	position: relative;
-	height: 167px;
+	height: 100px;
 	display: flex;
 	align-items: center;
 	padding: 0 15px;
@@ -17,18 +17,10 @@
 	z-index: 99999;
 }
 
-.explore-card-header::after {
-	content: "";
-	background: #fff;
-	height: 450px;
-	width: 799px;
-	position: absolute;
-	border-radius: 100%;
-	bottom: 5px;
-	left: -196px;
-	z-index: -11;
+.custom-cards-explore {
+  width: 64px;
+  height: 65px;
 }
-
 
 
 @media (max-width: 768px) {

@@ -106,35 +106,35 @@ const TopColleges = () => {
         </div>
 
         {/* Table */}
-        <div className="relative overflow-x-auto  border border-gray-100 mt-8">
+        <div className="relative overflow-x-auto rounded-xl  border border-gray-100 mt-8">
           {/* Table */}
           <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
             <thead className="text-xs text-gray-700 uppercase  ">
               <tr className="border-b  border-gray-100 bg-blue-100 ">
 
-                <th scope="col" className="px-6 py-3">
+                <th scope="col" className="px-6 py-4">
                   Rank
                 </th>
-                <th scope="col" className="px-6 py-3">
+                <th scope="col" className="px-6 py-4">
                   College
                 </th>
-                <th scope="col" className="px-6 py-3">
+                <th scope="col" className="px-6 py-4">
                   Ranking
                 </th>
-                <th scope="col" className="px-6 py-3">
+                <th scope="col" className="px-6 py-4">
                   Cutoff
                 </th>
-                <th scope="col" className="px-6 py-3">
+                <th scope="col" className="px-6 py-4">
                   Application Deadline
                 </th>
-                <th scope="col" className="px-6 py-3">
+                <th scope="col" className="px-6 py-4">
                   Fees
                 </th>
               </tr>
             </thead>
             <tbody>
 
-              <tr className="d:bg-odwhite even:bg-gray-50 border-b  border-gray-200">
+              <tr className="d:bg-odwhite even:bg-gray-50 ">
                 <td className="px-6 py-4 font-medium text-gray-600 whitespace-nowrap">
                   <p>#1</p>
                 </td>

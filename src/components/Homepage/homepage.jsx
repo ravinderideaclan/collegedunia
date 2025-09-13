@@ -6,7 +6,11 @@ import SetYourGoal from './setyourgoal';
 import ExploreProgram from "./exploreprogram";
 import TopColleges from "./topColleges";
 import TopUni from "./topUni";
-import topPlaces from "./topPlaces";
+import TopPlaces from "./topPlaces";
+import TopExam from "./topExam";
+
+
+
 
 
 
@@ -20,7 +24,9 @@ export const Homepage = () => {
             <ExploreProgram />
             <TopColleges />
             <TopUni />
-            <topPlaces/>
+            <TopPlaces />
+            <TopExam />
+            
         </>
     );
 };

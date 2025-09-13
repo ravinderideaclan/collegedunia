@@ -30,7 +30,7 @@ function Herosection() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [searchQuery, setSearchQuery] = useState('');
 
-  // ✅ Auto Slide Effect
+
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentSlide((prev) => (prev === slides.length - 1 ? 0 : prev + 1));
@@ -87,7 +87,7 @@ function Herosection() {
         </button>
       </div>
       {/* Search Section */}
-      <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto sm:px-0 px-8 pb-4 sm:pb-0 bg-gray-300 sm:bg-none">
+      <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto sm:px-0 px-8 pb-4 sm:pb-0 bg-gray-200 sm:bg-none">
         <div className="custom-search relative md:absolute top-0  rounded pt-8 mt-0 md:mt-10 md:max-w-170  w-full">
           <div>
             <h1 className="text-3xl md:text-4xl font-extrabold text-gray-900 mb-4">

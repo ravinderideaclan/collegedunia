@@ -86,7 +86,7 @@ function ExplorProgram() {
   ];
 
   return (
-    <section className="explore-program px-8 bg-gray-100">
+    <section className="explore-program px-8 ">
       <div className="max-w-screen-xl mx-auto  border-b border-gray-200 py-15">
 
         <div className='flex flex-col mb-8'>
@@ -117,18 +117,18 @@ function ExplorProgram() {
         </div>
 
         {/* Feature Cards */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-4">
           {featureCards.map((card) => (
             <div
               key={card.id}
-              className="relative z-10 overflow-hidden bg-gray-200/50 rounded-lg  border border-gray-300 shadow-lg transition-shadow  custom-border-rounded"
+              className="relative z-10 overflow-hidden bg-white  rounded-xlg  border border-gray-300 shadow-lg transition-shadow  custom-border-rounded"
             >
 
-              <div className="explore-card-header flex">
+              <div className="explore-card-header flex item-center">
                 <div
-                  className={`w-12 h-12 me-5 flex items-center justify-center rounded-full ${card.color} mb-3`}
+                  className={`custom-cards-explore me-5 flex items-center justify-center rounded-full ${card.color}`}
                 >
-                  <i className={`${card.icon} text-xl ${card.iconColor}`}></i>
+                  <i className={`${card.icon} text-3xl ${card.iconColor}`}></i>
                 </div>
                 <div className="flex flex-col">
                   <h3 className="font-semibold text-gray-800 mb-1 text-xl">{card.title}</h3>
@@ -136,7 +136,7 @@ function ExplorProgram() {
                 </div>
               </div>
 
-              <div className="body-text-explore px-4 mt-3">
+              <div className="body-text-explore p-4  bg-gray-200/50">
                 <div className="tag-colleges h-22">
                   <div className="list-info gap-3 flex flex-wrap">
                     {card.tags.map((tag, index) => (
@@ -158,9 +158,9 @@ function ExplorProgram() {
 
               </div>
 
-              <div className="footer-explore mx-4 px-0 py-3 border-t border-gray-300">
+              <div className="footer-explore mx-4 px-0 py-3 ">
 
-                <a href="#" className="text-blue-600 text-sm font-semibold">{card.footer} <i class="ri-arrow-right-s-line ms-1"></i></a>
+                <a href="#" className="text-red-600 text-sm font-semibold">{card.footer} <i class="ri-arrow-right-s-line ms-1 text-gray-800"></i></a>
 
 
 
