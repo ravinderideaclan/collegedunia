@@ -59,7 +59,7 @@ const topPlaces = () => {
               <div className='city-card py-5'>
                 <a href='#' className='city-box border border-gray-200 rounded-xl flex flex-col p-3 items-center justify-center transition-transform duration-300 hover:scale-105 hover:shadow-lg'>
                   <img className='w-20 h-20' src='../../src/assets/images/delhi-city.webp' alt='city Name' />
-                  <p className='text-lg  mt-3 text-gray-800'>Delhi</p>
+                  <p className='text-base  mt-3 text-gray-800'>Delhi</p>
                 </a>
               </div>           
 
@@ -70,7 +70,7 @@ const topPlaces = () => {
               <div className='city-card py-5'>
                 <a href='#' className='city-box border border-gray-200 rounded-xl flex flex-col p-3 items-center justify-center transition-transform duration-300 hover:scale-105 hover:shadow-lg'>
                   <img className='w-20 h-20' src='../../src/assets/images/bangalore-city.webp' alt='city Name' />
-                  <p className='text-lg  mt-3 text-gray-800'>Bangalore</p>
+                  <p className='text-base  mt-3 text-gray-800'>Bangalore</p>
                 </a>
               </div>           
 
@@ -81,7 +81,7 @@ const topPlaces = () => {
               <div className='city-card py-5'>
                 <a href='#' className='city-box border border-gray-200 rounded-xl flex flex-col p-3 items-center justify-center transition-transform duration-300 hover:scale-105 hover:shadow-lg'>
                   <img className='w-20 h-20' src='../../src/assets/images/hyderabad-city.webp' alt='city Name' />
-                  <p className='text-lg  mt-3 text-gray-800'>Hyderabad</p>
+                  <p className='text-base  mt-3 text-gray-800'>Hyderabad</p>
                 </a>
               </div>           
 
@@ -92,7 +92,7 @@ const topPlaces = () => {
               <div className='city-card py-5'>
                 <a href='#' className='city-box border border-gray-200 rounded-xl flex flex-col p-3 items-center justify-center transition-transform duration-300 hover:scale-105 hover:shadow-lg'>
                   <img className='w-20 h-20' src='../../src/assets/images/mumbai-city.webp' alt='city Name' />
-                  <p className='text-lg  mt-3 text-gray-800'>Mumbai</p>
+                  <p className='text-base  mt-3 text-gray-800'>Mumbai</p>
                 </a>
               </div>           
 
@@ -103,7 +103,7 @@ const topPlaces = () => {
               <div className='city-card py-5'>
                 <a href='#' className='city-box border border-gray-200 rounded-xl flex flex-col p-3 items-center justify-center transition-transform duration-300 hover:scale-105 hover:shadow-lg'>
                   <img className='w-20 h-20' src='../../src/assets/images/pune-city.webp' alt='city Name' />
-                  <p className='text-lg  mt-3 text-gray-800'>Pune</p>
+                  <p className='text-base  mt-3 text-gray-800'>Pune</p>
                 </a>
               </div>           
 
@@ -113,7 +113,7 @@ const topPlaces = () => {
               <div className='city-card py-5'>
                 <a href='#' className='city-box border border-gray-200 rounded-xl flex flex-col p-3 items-center justify-center transition-transform duration-300 hover:scale-105 hover:shadow-lg'>
                   <img className='w-20 h-20' src='../../src/assets/images/chandigarh-city.webp' alt='city Name' />
-                  <p className='text-lg  mt-3 text-gray-800'>Chandigarh</p>
+                  <p className='text-base  mt-3 text-gray-800'>Chandigarh</p>
                 </a>
               </div>           
 
@@ -123,7 +123,7 @@ const topPlaces = () => {
               <div className='city-card py-5'>
                 <a href='#' className='city-box border border-gray-200 rounded-xl flex flex-col p-3 items-center justify-center transition-transform duration-300 hover:scale-105 hover:shadow-lg'>
                   <img className='w-20 h-20' src='../../src/assets/images/kolkata-city.webp' alt='city Name' />
-                  <p className='text-lg  mt-3 text-gray-800'>Kolkata</p>
+                  <p className='text-base  mt-3 text-gray-800'>Kolkata</p>
                 </a>
               </div>           
 
@@ -134,7 +134,7 @@ const topPlaces = () => {
               <div className='city-card py-5'>
                 <a href='#' className='city-box border border-gray-200 rounded-xl flex flex-col p-3 items-center justify-center transition-transform duration-300 hover:scale-105 hover:shadow-lg'>
                   <img className='w-20 h-20' src='../../src/assets/images/chennai-city.webp' alt='city Name' />
-                  <p className='text-lg  mt-3 text-gray-800'>Chennai</p>
+                  <p className='text-base  mt-3 text-gray-800'>Chennai</p>
                 </a>
               </div>           
 
@@ -147,7 +147,7 @@ const topPlaces = () => {
               <div className='city-card py-5'>
                 <a href='#' className='city-box border border-gray-200 rounded-xl flex flex-col p-3 items-center justify-center transition-transform duration-300 hover:scale-105 hover:shadow-lg'>
                   <img className='w-20 h-20' src='../../src/assets/images/chennai-city.webp' alt='city Name' />
-                  <p className='text-lg  mt-3 text-gray-800'>Chennai</p>
+                  <p className='text-base  mt-3 text-gray-800'>Chennai</p>
                 </a>
               </div>           
 

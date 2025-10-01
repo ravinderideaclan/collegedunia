@@ -13,14 +13,15 @@ const TopExam = () => {
                 </div>
                 <div className='grid grid-cols-2 md:grid-cols-4 gap-3'>
 
+               
                     <div className='exam-p-box rounded-xl border border-gray-200 p-3'>
                         <div className='flex flex-row'>
                             <div className='uni-logo w-20 he-20 border border-gray-200 p-1 rounded-full overflow-hidden'>
-                                <img className='w-full' src='../../src/assets/images/logo/cuet.webp' alt='Exam Name' />
+                                <img className='w-full' src='../../src/assets/images/logo/jee-advance.webp' alt='Exam Name' />
                             </div>
                             <div className='exam-title ms-3 flex justify-center flex-col'>
-                                <h3 className='text-2xl font-semibold'>CUTE</h3>
-                                <span class="bg-indigo-100 text-indigo-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-sm ">Online</span>
+                                <h3 className='text-2xl font-semibold text-gray-800'>JEE Advance</h3>
+                                <span class="bg-indigo-100 text-indigo-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-sm  w-15">Online</span>
                             </div>
                         </div>
                         <div className='partcipate-c flex justify-between py-2 border-b border-gray-200'>
@@ -37,7 +38,7 @@ const TopExam = () => {
                                 <div className=''>
                                     <p className='text-gray-500 text-sm'><i class="ri-calendar-2-line"></i> Exam Date </p>
                                 </div>
-                                <p className='text-semibold text-base font-semibold'>May 13, 2025</p>
+                                <p className='text-semibold text-base font-semibold text-gray-800'>May 13, 2025</p>
                             </div>
 
 
@@ -45,15 +46,14 @@ const TopExam = () => {
                                 <div className=''>
                                     <p className='text-gray-500 text-sm'><i class="ri-file-list-3-line"></i> Exam Level </p>
                                 </div>
-                                <p className='text-semibold text-base font-semibold'>National</p>
+                                <p className='text-semibold text-base font-semibold text-gray-800'>National</p>
                             </div>
                         </div>
                         <div className="footer-btn grid grid-cols-1 sm:grid-cols-3 gap-3 mt-3 ">
-                            <button class="col-span-2 bg-gray-800 hover:bg-red-900 text-white text-xs font-medium px-3 py-2 rounded-full w-full cursor-pointer">Application Process</button>
-                            <button class="border border-gray-300 px-3 py-2 bg-white text-xs hover:bg-gray-300 text-gray-800 rounded-full cursor-pointer">Exam Info</button>
+                            <button class="bg-gray-800 hover:bg-red-600 col-span-2  text-white text-xs font-medium px-3 py-2 rounded-md w-full cursor-pointer">Application Process</button>
+                            <button class="border border-gray-300 px-3 py-2 bg-white text-xs hover:bg-gray-300 text-gray-800 rounded-md cursor-pointer">Exam Info</button>
                         </div>
                     </div>
-
 
                     <div className='exam-p-box rounded-xl border border-gray-200 p-3'>
                         <div className='flex flex-row'>
@@ -61,8 +61,8 @@ const TopExam = () => {
                                 <img className='w-full' src='../../src/assets/images/logo/jee-advance.webp' alt='Exam Name' />
                             </div>
                             <div className='exam-title ms-3 flex justify-center flex-col'>
-                                <h3 className='text-2xl font-semibold'>JEE Advance</h3>
-                                <span class="bg-indigo-100 text-indigo-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-sm ">Online</span>
+                                <h3 className='text-2xl font-semibold text-gray-800'>JEE Advance</h3>
+                                                          <span class="bg-indigo-100 text-indigo-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-sm  w-15">Online</span>
                             </div>
                         </div>
                         <div className='partcipate-c flex justify-between py-2 border-b border-gray-200'>
@@ -79,7 +79,7 @@ const TopExam = () => {
                                 <div className=''>
                                     <p className='text-gray-500 text-sm'><i class="ri-calendar-2-line"></i> Exam Date </p>
                                 </div>
-                                <p className='text-semibold text-base font-semibold'>May 13, 2025</p>
+                                <p className='text-semibold text-base font-semibold text-gray-800'>May 13, 2025</p>
                             </div>
 
 
@@ -87,11 +87,11 @@ const TopExam = () => {
                                 <div className=''>
                                     <p className='text-gray-500 text-sm'><i class="ri-file-list-3-line"></i> Exam Level </p>
                                 </div>
-                                <p className='text-semibold text-base font-semibold'>National</p>
+                                <p className='text-semibold text-base font-semibold text-gray-800'>National</p>
                             </div>
                         </div>
                         <div className="footer-btn grid grid-cols-1 sm:grid-cols-3 gap-3 mt-3 ">
-                            <button class="col-span-2 bg-red-600 text-white text-xs font-medium px-3 py-2 rounded-md w-full cursor-pointer">Application Process</button>
+                            <button class="bg-gray-800 hover:bg-red-600 col-span-2  text-white text-xs font-medium px-3 py-2 rounded-md w-full cursor-pointer">Application Process</button>
                             <button class="border border-gray-300 px-3 py-2 bg-white text-xs hover:bg-gray-300 text-gray-800 rounded-md cursor-pointer">Exam Info</button>
                         </div>
                     </div>
@@ -102,8 +102,8 @@ const TopExam = () => {
                                 <img className='w-full' src='../../src/assets/images/logo/neet-logo.webp' alt='Exam Name' />
                             </div>
                             <div className='exam-title ms-3 flex justify-center flex-col'>
-                                <h3 className='text-2xl font-semibold'>NEET</h3>
-                                <span class="bg-indigo-100 text-indigo-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-sm ">Online</span>
+                                <h3 className='text-2xl font-semibold text-gray-800'>NEET</h3>
+                           <span class="bg-indigo-100 text-indigo-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-sm  w-15">Online</span>
                             </div>
                         </div>
                         <div className='partcipate-c flex justify-between py-2 border-b border-gray-200'>
@@ -120,7 +120,7 @@ const TopExam = () => {
                                 <div className=''>
                                     <p className='text-gray-500 text-sm'><i class="ri-calendar-2-line"></i> Exam Date </p>
                                 </div>
-                                <p className='text-semibold text-base font-semibold'>May 13, 2025</p>
+                                <p className='text-semibold text-base font-semibold text-gray-800'>May 13, 2025</p>
                             </div>
 
 
@@ -128,11 +128,11 @@ const TopExam = () => {
                                 <div className=''>
                                     <p className='text-gray-500 text-sm'><i class="ri-file-list-3-line"></i> Exam Level </p>
                                 </div>
-                                <p className='text-semibold text-base font-semibold'>National</p>
+                                <p className='text-semibold text-base font-semibold text-gray-800'>National</p>
                             </div>
                         </div>
                         <div className="footer-btn grid grid-cols-1 sm:grid-cols-3 gap-3 mt-3 ">
-                            <button class="col-span-2 bg-red-600 text-white text-xs font-medium px-3 py-2 rounded-md w-full cursor-pointer">Application Process</button>
+                            <button class="bg-gray-800 hover:bg-red-600 col-span-2 text-white text-xs font-medium px-3 py-2 rounded-md w-full cursor-pointer">Application Process</button>
                             <button class="border border-gray-300 px-3 py-2 bg-white text-xs hover:bg-gray-300 text-gray-800 rounded-md cursor-pointer">Exam Info</button>
                         </div>
                     </div>
@@ -144,8 +144,8 @@ const TopExam = () => {
                                 <img className='w-full' src='../../src/assets/images/logo/jee-advance.webp' alt='Exam Name' />
                             </div>
                             <div className='exam-title ms-3 flex justify-center flex-col'>
-                                <h3 className='text-2xl font-semibold'>JEE Mains</h3>
-                                <span class="bg-indigo-100 text-indigo-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-sm ">Online</span>
+                                <h3 className='text-2xl font-semibold text-gray-800'>JEE Mains</h3>
+                                <span class="bg-indigo-100 text-indigo-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-sm  w-15">Online</span>
                             </div>
                         </div>
                         <div className='partcipate-c flex justify-between py-2 border-b border-gray-200'>
@@ -162,7 +162,7 @@ const TopExam = () => {
                                 <div className=''>
                                     <p className='text-gray-500 text-sm'><i class="ri-calendar-2-line"></i> Exam Date </p>
                                 </div>
-                                <p className='text-semibold text-base font-semibold'>May 13, 2025</p>
+                                <p className='text-semibold text-base font-semibold text-gray-800'>May 13, 2025</p>
                             </div>
 
 
@@ -170,11 +170,11 @@ const TopExam = () => {
                                 <div className=''>
                                     <p className='text-gray-500 text-sm'><i class="ri-file-list-3-line"></i> Exam Level </p>
                                 </div>
-                                <p className='text-semibold text-base font-semibold'>National</p>
+                                <p className='text-semibold text-base font-semibold text-gray-800'>National</p>
                             </div>
                         </div>
                         <div className="footer-btn grid grid-cols-1 sm:grid-cols-3 gap-3 mt-3 ">
-                            <button class="col-span-2 bg-red-600 text-white text-xs font-medium px-3 py-2 rounded-md w-full cursor-pointer">Application Process</button>
+                            <button class="bg-gray-800 hover:bg-red-600 col-span-2  text-white text-xs font-medium px-3 py-2 rounded-md w-full cursor-pointer">Application Process</button>
                             <button class="border border-gray-300 px-3 py-2 bg-white text-xs hover:bg-gray-300 text-gray-800 rounded-md cursor-pointer">Exam Info</button>
                         </div>
                     </div>

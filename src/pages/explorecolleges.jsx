@@ -2,6 +2,8 @@ import React, { useState, useRef, useEffect } from "react";
 import ReactDOM from "react-dom";
 import { Link } from "react-router-dom";
 import "./ExploreColleges.css";
+import "../components/FilterModal/Filtermodal"
+
 
 const filtersData = {
   Stream: [
@@ -406,7 +408,20 @@ const ExploreColleges = () => {
   const [dropdownPosition, setDropdownPosition] = useState({ top: 0, left: 0 });
   const [showLeftArrow, setShowLeftArrow] = useState(false);
   const [showRightArrow, setShowRightArrow] = useState(true);
+  const [viewMode, setViewMode] = useState("table");
 
+  // New states for filtering functionality
+  const [filters, setFilters] = useState({});
+  const [searchTerm, setSearchTerm] = useState("");
+  const [filteredColleges, setFilteredColleges] = useState(collegeData);
+  const [sortBy, setSortBy] = useState("popularity"); // default sort
+
+  // Handle filter search input change
+  const handleFilterSearch = (e) => {
+    setSearchTerm(e.target.value);
+  };
+
+  // Toggle filter dropdown
   const handleToggle = (filter) => {
     const button = buttonRefs.current[filter];
     if (!button) return;
@@ -416,8 +431,106 @@ const ExploreColleges = () => {
       left: rect.left + window.scrollX,
     });
     setOpenDropdown(openDropdown === filter ? null : filter);
+    setSearchTerm("");
   };
 
+  // Handle checkbox selection
+  const handleCheckboxChange = (category, value, isChecked) => {
+    setFilters(prevFilters => {
+      const categoryFilters = prevFilters[category] || [];
+
+      if (isChecked) {
+        return {
+          ...prevFilters,
+          [category]: [...categoryFilters, value]
+        };
+      } else {
+        return {
+          ...prevFilters,
+          [category]: categoryFilters.filter(item => item !== value)
+        };
+      }
+    });
+  };
+
+  // Handle tag selection (non-checkbox filters)
+  const handleTagSelect = (category, value) => {
+    setFilters(prevFilters => {
+      const categoryFilters = prevFilters[category] || [];
+
+      // If already selected, deselect it
+      if (categoryFilters.includes(value)) {
+        return {
+          ...prevFilters,
+          [category]: categoryFilters.filter(item => item !== value)
+        };
+      } else {
+        return {
+          ...prevFilters,
+          [category]: [...categoryFilters, value]
+        };
+      }
+    });
+  };
+
+  // Clear all filters in a category
+  const handleClearFilters = (category) => {
+    setFilters(prevFilters => {
+      const newFilters = { ...prevFilters };
+      delete newFilters[category];
+      return newFilters;
+    });
+    setOpenDropdown(null);
+  };
+
+  // Clear all filters
+  const handleClearAllFilters = () => {
+    setFilters({});
+    setSearchTerm("");
+  };
+
+  // Apply all filters to college data
+  useEffect(() => {
+    let result = collegeData;
+
+    // Apply filters for each category
+    Object.keys(filters).forEach(category => {
+      const selectedFilters = filters[category];
+      if (selectedFilters && selectedFilters.length > 0) {
+        result = result.filter(college => {
+          // Apply different filtering logic based on category
+          switch (category) {
+            case "City":
+              return selectedFilters.some(city =>
+                college.location.includes(city));
+            case "State":
+              return selectedFilters.some(state =>
+                college.location.includes(state));
+            case "Course":
+              return selectedFilters.some(course =>
+                college.course.includes(course));
+            case "College Category":
+              return selectedFilters.some(cat =>
+                college.name.includes(cat));
+            default:
+              return true; // If no matching logic, don't filter
+          }
+        });
+      }
+    });
+
+    // Apply sort
+    if (sortBy === "rating") {
+      result = [...result].sort((a, b) => parseFloat(b.rating) - parseFloat(a.rating));
+    } else {
+      // Default to popularity (based on rank)
+      result = [...result].sort((a, b) => a.rank - b.rank);
+    }
+
+    setFilteredColleges(result);
+  }, [filters, sortBy]);
+
+  // Horizontal scroll handling for filter buttons
   const scroll = (direction) => {
     const container = scrollRef.current;
     if (!container) return;
@@ -439,6 +552,11 @@ const ExploreColleges = () => {
     setShowRightArrow(container.scrollLeft + container.offsetWidth < container.scrollWidth - 10);
   };
 
+  // Handle sort changes
+  const handleSortChange = (e) => {
+    setSortBy(e.target.value);
+  };
+
   useEffect(() => {
     const handleClickOutside = (e) => {
       if (!e.target.closest(".dropdown-portal")) {
@@ -453,8 +571,14 @@ const ExploreColleges = () => {
     handleScroll(); // initial state
   }, []);
 
+  // Get filtered options based on search term
+  const getFilteredOptions = (category) => {
+    if (!searchTerm) return filtersData[category] || [];
 
-  const [viewMode, setViewMode] = useState("table");
+    return (filtersData[category] || []).filter(option =>
+      option.toLowerCase().includes(searchTerm.toLowerCase())
+    );
+  };
 
   return (
     <>
@@ -513,11 +637,41 @@ const ExploreColleges = () => {
         </div>
       </section>
 
+      {/* Active Filters */}
+      {Object.keys(filters).length > 0 && (
+        <div className="bg-gray-100 py-2">
+          <div className="max-w-screen-xl mx-auto px-4">
+            <div className="flex flex-wrap items-center gap-2">
+              <span className="text-sm font-medium">Active Filters:</span>
+              {Object.keys(filters).map(category =>
+                filters[category].map(value => (
+                  <div key={`${category}-${value}`} className="bg-white rounded-full px-3 py-1 text-sm flex items-center border border-gray-300">
+                    <span className="font-medium mr-1">{category}:</span> {value}
+                    <button
+                      onClick={() => handleCheckboxChange(category, value, false)}
+                      className="ml-2 text-gray-500 hover:text-red-500"
+                    >
+                      <i className="ri-close-line"></i>
+                    </button>
+                  </div>
+                ))
+              )}
+              <button
+                onClick={handleClearAllFilters}
+                className="ml-auto text-sm text-red-600 hover:underline"
+              >
+                Clear All Filters
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
       {/* Filters */}
       <section className="relative bg-gray-200 py-3">
         <div className="max-w-screen-xl mx-auto flex items-center relative px-4">
           <div className="allfiter border-r border-gray-500 pr-3">
-            <button type="button" className="text-nowrap cursor-pointer text-white  bg-red-600 hover:bg-gray-800 hover:text-white font-medium rounded-full text-sm px-5 py-2.5 inline-flex items-center me-2 mb-2">
+            <button data-modal-target="default-modal" data-modal-toggle="default-modal" type="button" className="text-nowrap cursor-pointer text-white  bg-red-600 hover:bg-gray-800 hover:text-white font-medium rounded-full text-sm px-5 py-2.5 inline-flex items-center me-2 mb-2">
               <i className="ri-equalizer-line me-3"></i> All Filter
             </button>
           </div>
@@ -535,9 +689,12 @@ const ExploreColleges = () => {
                   key={filter}
                   ref={(el) => (buttonRefs.current[filter] = el)}
                   onClick={() => handleToggle(filter)}
-                  className="cursor-pointer me-3 bg-white border border-gray-300 hover:bg-gray-900 hover:text-white font-medium rounded-full text-sm px-4 py-2.5 inline-flex items-center whitespace-nowrap"
+                  className={`cursor-pointer me-3 border border-gray-300 font-medium rounded-full text-sm px-4 py-2.5 inline-flex items-center whitespace-nowrap ${filters[filter] && filters[filter].length > 0
+                    ? "bg-gray-900 text-white"
+                    : "bg-white hover:bg-gray-900 hover:text-white"
+                    }`}
                 >
-                  {filter} <i className="ri-arrow-down-s-line ml-2"></i>
+                  {filter} {filters[filter] && filters[filter].length > 0 && `(${filters[filter].length})`} <i className="ri-arrow-down-s-line ml-2"></i>
                 </button>
               ))}
             </div>
@@ -571,11 +728,12 @@ const ExploreColleges = () => {
             </div>
 
             <div className="filter-Search relative mx-3 my-4">
-
-              <i class="ri-search-2-line absolute text-base text-gray-500 top-2 left-2                                    "></i>
+              <i className="ri-search-2-line absolute text-base text-gray-500 top-2 left-2"></i>
               <input
                 type="text"
                 placeholder={`Find ${openDropdown}`}
+                value={searchTerm}
+                onChange={handleFilterSearch}
                 className="w-full pl-4 pr-4 py-2 border border-gray-400 rounded-lg focus:outline-none text-base pl-8"
               />
             </div>
@@ -583,10 +741,12 @@ const ExploreColleges = () => {
             <div className="max-h-56 overflow-y-auto px-3 py-3">
               {checkboxFilters.has(openDropdown) ? (
                 <div className="grid grid-cols-2 gap-2">
-                  {filtersData[openDropdown].map((item, idx) => (
+                  {getFilteredOptions(openDropdown).map((item, idx) => (
                     <label key={idx} className="flex items-center space-x-2 cursor-pointer">
                       <input
                         type="checkbox"
+                        checked={filters[openDropdown]?.includes(item) || false}
+                        onChange={(e) => handleCheckboxChange(openDropdown, item, e.target.checked)}
                         className="w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
                       />
                       <span className="text-sm text-gray-700">{item}</span>
@@ -595,14 +755,17 @@ const ExploreColleges = () => {
                 </div>
               ) : (
                 <div className="flex flex-wrap gap-2">
-                  {filtersData[openDropdown].map((item, idx) => (
-                    <a
+                  {getFilteredOptions(openDropdown).map((item, idx) => (
+                    <button
                       key={idx}
-                      href="#"
-                      className="px-3 py-1.5 text-sm font-medium text-gray-700 rounded-full border border-gray-400 hover:bg-gray-100"
+                      onClick={() => handleTagSelect(openDropdown, item)}
+                      className={`px-3 py-1.5 text-sm font-medium rounded-full border ${filters[openDropdown]?.includes(item)
+                        ? "bg-gray-900 text-white border-gray-900"
+                        : "text-gray-700 border-gray-400 hover:bg-gray-100"
+                        }`}
                     >
                       {item}
-                    </a>
+                    </button>
                   ))}
                 </div>
               )}
@@ -610,42 +773,52 @@ const ExploreColleges = () => {
 
             <div className="sticky bottom-0 bg-white border-t flex justify-between px-4 py-2">
               <button className="text-sm text-blue-600 hover:underline">View All</button>
-              <button className="text-sm text-red-600 hover:underline">Clear</button>
+              <button
+                onClick={() => handleClearFilters(openDropdown)}
+                className="text-sm text-red-600 hover:underline"
+              >
+                Clear
+              </button>
             </div>
           </div>,
           document.body
         )}
 
-
-
-
-
       {/* Filter Table */}
-
       <section className="college-data mt-5">
         <div className="max-w-screen-xl mx-auto flex items-center relative px-4">
-
-          <div className="bg-gray-100 rounded-lg p-5 w-full">
-
+          <div className="bg-gray-100 rounded-lg p-5 w-full mb-10">
             <div className="header-data-inof flex justify-between">
               <div className="foundcollege">
-                <p className="text-base font-semibold"><i className="ri-school-line me-1"></i> Found 20587 Colleges</p>
+                <p className="text-base font-semibold">
+                  <i className="ri-school-line me-1"></i> Found {filteredColleges.length} Colleges
+                </p>
               </div>
               <div className="sort-list-info flex gap-3 ">
-
                 <p>Sort By</p>
                 <div className="flex items-center ">
-                  <input id="popularity" type="radio" value="rating"
-                    name="sort" className="w-4 h-4 text-red-600 bg-gray-100 border-gray-300 focus:ring-red-500 "></input>
-                  <label for="popularity" className="ms-2 text-sm font-medium text-gray-600 ">Popularity</label>
+                  <input
+                    id="popularity"
+                    type="radio"
+                    value="popularity"
+                    name="sort"
+                    checked={sortBy === "popularity"}
+                    onChange={handleSortChange}
+                    className="w-4 h-4 text-red-600 bg-gray-100 border-gray-300 focus:ring-red-500 "
+                  />
+                  <label htmlFor="popularity" className="ms-2 text-sm font-medium text-gray-600 ">Popularity</label>
                 </div>
                 <div className="flex items-center">
                   <input
                     id="rating"
-                    type="radio" value="rating"
+                    type="radio"
+                    value="rating"
                     name="sort"
-                    className="w-4 h-4 text-red-600 bg-gray-100 border-gray-300 focus:ring-red-500 "></input>
-                  <label for="rating" className="ms-2 text-sm font-medium text-gray-600 ">Rating</label>
+                    checked={sortBy === "rating"}
+                    onChange={handleSortChange}
+                    className="w-4 h-4 text-red-600 bg-gray-100 border-gray-300 focus:ring-red-500 "
+                  />
+                  <label htmlFor="rating" className="ms-2 text-sm font-medium text-gray-600 ">Rating</label>
                 </div>
 
                 <div className="flex justify-end gap-4 ">
@@ -653,25 +826,20 @@ const ExploreColleges = () => {
                     onClick={() => setViewMode("grid")}
                     className={` text-xl cursor-pointer rounded ${viewMode === "grid" ? "text-red-600" : ""}`}
                   >
-                    <i class="ri-archive-drawer-line"></i>
+                    <i className="ri-archive-drawer-line"></i>
                   </button>
                   <button
                     onClick={() => setViewMode("table")}
                     className={`text-xl cursor-pointer rounded ${viewMode === "table" ? "text-red-600" : ""}`}
                   >
-                    <i class="ri-grid-line"></i>
+                    <i className="ri-grid-line"></i>
                   </button>
                 </div>
-
-
               </div>
             </div>
 
-
-
-
             {viewMode === "table" ? (
-              // Your existing table JSX goes here
+              // Table View
               <div className="relative overflow-x-auto mt-8 rounded-lg border border-gray-300">
                 <table className="w-full text-sm text-left text-gray-500 border-collapse">
                   <thead className="text-xs text-gray-700 uppercase">
@@ -684,8 +852,7 @@ const ExploreColleges = () => {
                     </tr>
                   </thead>
                   <tbody>
-                    {/* Repeat same rows or map over data */}
-                    {collegeData.map((college, idx) => (
+                    {filteredColleges.map((college, idx) => (
                       <tr key={idx} className="bg-white border-b border-gray-200">
                         <td className="px-6 py-4 font-medium text-gray-600 whitespace-nowrap border-r border-gray-200 align-top">
                           <p>#{college.rank}</p>
@@ -734,7 +901,7 @@ const ExploreColleges = () => {
             ) : (
               // Grid View
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
-                {collegeData.map((college, idx) => (
+                {filteredColleges.map((college, idx) => (
                   <div key={idx} className="bg-white p-4 rounded-lg shadow border border-gray-400 transition hover:shadow-lg">
                     <div className="flex items-center mb-4">
                       <img className="w-12 h-12 rounded-full p-1 ring-1 ring-gray-300" src={college.logo} alt="Logo" />
@@ -764,12 +931,98 @@ const ExploreColleges = () => {
               </div>
             )}
 
+            {/* No results message */}
+            {filteredColleges.length === 0 && (
+              <div className="text-center py-8">
+                <p className="text-xl font-medium text-gray-700">No colleges found matching your filters</p>
+                <button
+                  onClick={handleClearAllFilters}
+                  className="mt-4 px-6 py-2 bg-red-600 text-white font-medium rounded-lg hover:bg-red-700"
+                >
+                  Clear All Filters
+                </button>
+              </div>
+            )}
           </div>
         </div>
       </section>
 
 
+      {/* Main modal */}
+      <div
+        id="default-modal"
+        tabIndex="-1"
+        aria-hidden="true"
+        className="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full"
+      >
+        <div className="relative p-4 w-full max-w-5xl max-h-full">
+          {/* Modal content */}
+          <div className="relative bg-white rounded-lg shadow-sm ">
+            {/* Modal header */}
+            <div className="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600 border-gray-200">
+              <h3 className="text-xl font-semibold text-gray-900 ">
+                Filter
+              </h3>
+              <button
+                type="button"
+                className="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white"
+                data-modal-hide="default-modal"
+              >
+                <svg
+                  className="w-3 h-3"
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 14 14"
+                >
+                  <path
+                    stroke="currentColor"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"
+                  />
+                </svg>
+                <span className="sr-only">Close modal</span>
+              </button>
+            </div>
 
+            {/* Modal body */}
+            <div className="p-4 md:p-5 space-y-4">
+              <p className="text-base leading-relaxed text-gray-500 dark:text-gray-400">
+                With less than a month to go before the European Union enacts
+                new consumer privacy laws for its citizens, companies around the
+                world are updating their terms of service agreements to comply.
+              </p>
+              <p className="text-base leading-relaxed text-gray-500 dark:text-gray-400">
+                The European Union’s General Data Protection Regulation
+                (G.D.P.R.) goes into effect on May 25 and is meant to ensure a
+                common set of data rights in the European Union. It requires
+                organizations to notify users as soon as possible of high-risk
+                data breaches that could personally affect them.
+              </p>
+            </div>
+
+            {/* Modal footer */}
+            <div className="flex items-center p-4 md:p-5 border-t border-gray-200 rounded-b dark:border-gray-600">
+              <button
+                data-modal-hide="default-modal"
+                type="button"
+                className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+              >
+                I accept
+              </button>
+              <button
+                data-modal-hide="default-modal"
+                type="button"
+                className="py-2.5 px-5 ms-3 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700"
+              >
+                Decline
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
 
 
 

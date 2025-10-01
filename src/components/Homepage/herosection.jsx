@@ -93,7 +93,7 @@ function Herosection() {
             <h1 className="text-3xl md:text-4xl font-extrabold text-gray-900 mb-4">
               Find Your <span className='text-red-600'> Perfect College</span>  & Build  Your Future
             </h1>
-            <p className="text-gray-900 mb-6">
+            <p className="text-gray-500 mb-6">
               Discover top colleges, explore courses, and get expert guidance for your educational journey
             </p>
 
@@ -101,9 +101,9 @@ function Herosection() {
               <div className="flex-1">
                 <div className="relative">
                   <div className="w-6 h-6 flex items-center justify-center absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400">
-                    
-                    
-                    
+
+
+
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       className="h-5 w-5"
@@ -128,13 +128,13 @@ function Herosection() {
               </div>
               <button
                 onClick={handleSearch}
-                className="bg-gray-900 text-white px-8 py-4 rounded-full font-semibold hover:opacity-90 transition-all duration-200 whitespace-nowrap shadow-lg"
+                className="bg-gray-800 text-white px-8 py-4 rounded-full font-semibold hover:opacity-90 transition-all duration-200 whitespace-nowrap shadow-lg"
               >
                 Search Now
               </button>
             </div>
 
-            <p className='text-gray-900 text-base'> <i className="ri-graduation-cap-line me-1 text-red-600"></i>  Popular Courses</p>
+            <p className='text-gray-800 text-base'> <i className="ri-graduation-cap-line me-1 text-red-600"></i>  Popular Courses</p>
             <div className='keywords-tags relative overflow-x-auto whitespace-nowrap py-4 sm:py-3 max-w-full mt-3'>
               <a href='#' className='px-3 text-xs bg-none border border-gray-400 p-2 rounded-4xl mr-2 hover:bg-white '>B.Tech</a>
               <a href='#' className='px-3 text-xs bg-none border border-gray-400 p-2 rounded-4xl mr-2 hover:bg-white'>MBA</a>

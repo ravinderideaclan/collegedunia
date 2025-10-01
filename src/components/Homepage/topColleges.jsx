@@ -138,7 +138,7 @@ const TopColleges = () => {
                 <td className="px-6 py-4 font-medium text-gray-600 whitespace-nowrap">
                   <p>#1</p>
                 </td>
-                <td className="flex items-center px-6 py-4 text-gray-900 whitespace-nowrap ">
+                <td className="flex items-center px-6 py-4 text-gray-800 whitespace-nowrap ">
                   <img className="w-10 h-10 rounded-full p-1 ring-1 ring-gray-300" src="../../src/assets/images/logo/iit.webp" alt="Jese image"></img>
                   <div className="ps-3">
                     <div className="text-base font-semibold">IIMA - Indian Institute of Management</div>
@@ -166,7 +166,7 @@ const TopColleges = () => {
                 <td className="px-6 py-4 font-medium text-gray-600 whitespace-nowrap">
                   <p>#2</p>
                 </td>
-                <td className="flex items-center px-6 py-4 text-gray-900 whitespace-nowrap ">
+                <td className="flex items-center px-6 py-4 text-gray-800 whitespace-nowrap ">
                   <img className="w-10 h-10 rounded-full p-1 ring-1 ring-gray-300" src="../../src/assets/images/logo/iit.webp" alt="Jese image"></img>
                   <div className="ps-3">
                     <div className="text-base font-semibold">IIMA - Indian Institute of Management</div>
@@ -195,7 +195,7 @@ const TopColleges = () => {
                 <td className="px-6 py-4 font-medium text-gray-600 whitespace-nowrap">
                   <p>#3</p>
                 </td>
-                <td className="flex items-center px-6 py-4 text-gray-900 whitespace-nowrap ">
+                <td className="flex items-center px-6 py-4 text-gray-800 whitespace-nowrap ">
                   <img className="w-10 h-10 rounded-full p-1 ring-1 ring-gray-300" src="../../src/assets/images/logo/iit.webp" alt="Jese image"></img>
                   <div className="ps-3">
                     <div className="text-base font-semibold">IIMA - Indian Institute of Management</div>
@@ -224,7 +224,7 @@ const TopColleges = () => {
                 <td className="px-6 py-4 font-medium text-gray-600 whitespace-nowrap">
                   <p>#4</p>
                 </td>
-                <td className="flex items-center px-6 py-4 text-gray-900 whitespace-nowrap ">
+                <td className="flex items-center px-6 py-4 text-gray-800 whitespace-nowrap ">
                   <img className="w-10 h-10 rounded-full p-1 ring-1 ring-gray-300" src="../../src/assets/images/logo/iit.webp" alt="Jese image"></img>
                   <div className="ps-3">
                     <div className="text-base font-semibold">IIMA - Indian Institute of Management</div>
@@ -253,7 +253,7 @@ const TopColleges = () => {
                 <td className="px-6 py-4 font-medium text-gray-600 whitespace-nowrap">
                   <p>#5</p>
                 </td>
-                <td className="flex items-center px-6 py-4 text-gray-900 whitespace-nowrap ">
+                <td className="flex items-center px-6 py-4 text-gray-800 whitespace-nowrap ">
                   <img className="w-10 h-10 rounded-full p-1 ring-1 ring-gray-300" src="../../src/assets/images/logo/iit.webp" alt="Jese image"></img>
                   <div className="ps-3">
                     <div className="text-base font-semibold">IIMA - Indian Institute of Management</div>
@@ -282,7 +282,7 @@ const TopColleges = () => {
                 <td className="px-6 py-4 font-medium text-gray-600 whitespace-nowrap">
                   <p>#7</p>
                 </td>
-                <td className="flex items-center px-6 py-4 text-gray-900 whitespace-nowrap ">
+                <td className="flex items-center px-6 py-4 text-gray-800 whitespace-nowrap ">
                   <img className="w-10 h-10 rounded-full p-1 ring-1 ring-gray-300" src="../../src/assets/images/logo/iit.webp" alt="Jese image"></img>
                   <div className="ps-3">
                     <div className="text-base font-semibold">IIMA - Indian Institute of Management</div>
@@ -310,7 +310,7 @@ const TopColleges = () => {
                 <td className="px-6 py-4 font-medium text-gray-600 whitespace-nowrap">
                   <p>#8</p>
                 </td>
-                <td className="flex items-center px-6 py-4 text-gray-900 whitespace-nowrap ">
+                <td className="flex items-center px-6 py-4 text-gray-800 whitespace-nowrap ">
                   <img className="w-10 h-10 rounded-full p-1 ring-1 ring-gray-300" src="../../src/assets/images/logo/iit.webp" alt="Jese image"></img>
                   <div className="ps-3">
                     <div className="text-base font-semibold">IIMA - Indian Institute of Management</div>
@@ -339,7 +339,7 @@ const TopColleges = () => {
                 <td className="px-6 py-4 font-medium text-gray-600 whitespace-nowrap">
                   <p>#9</p>
                 </td>
-                <td className="flex items-center px-6 py-4 text-gray-900 whitespace-nowrap ">
+                <td className="flex items-center px-6 py-4 text-gray-800 whitespace-nowrap ">
                   <img className="w-10 h-10 rounded-full p-1 ring-1 ring-gray-300" src="../../src/assets/images/logo/iit.webp" alt="Jese image"></img>
                   <div className="ps-3">
                     <div className="text-base font-semibold">IIMA - Indian Institute of Management</div>
@@ -368,7 +368,7 @@ const TopColleges = () => {
                 <td className="px-6 py-4 font-medium text-gray-600 whitespace-nowrap">
                   <p>#10</p>
                 </td>
-                <td className="flex items-center px-6 py-4 text-gray-900 whitespace-nowrap ">
+                <td className="flex items-center px-6 py-4 text-gray-800 whitespace-nowrap ">
                   <img className="w-10 h-10 rounded-full p-1 ring-1 ring-gray-300" src="../../src/assets/images/logo/iit.webp" alt="Jese image"></img>
                   <div className="ps-3">
                     <div className="text-base font-semibold">IIMA - Indian Institute of Management</div>

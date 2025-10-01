@@ -95,9 +95,6 @@ function ExplorProgram() {
           </h2>
           <p className='text-gray-500'>Browse available programs to find the right fit for you.</p>
         </div>
-
-
-
         {/* Tags/Filter Buttons */}
         <div className="mb-8 overflow-x-auto">
           <div className="flex space-x-2 pb-2 min-w-max">
@@ -106,7 +103,7 @@ function ExplorProgram() {
                 key={tag}
                 className={`px-5 py-3 rounded-full text-sm font-medium whitespace-nowrap transition cursor-pointer ${activeTag === tag
                   ? "bg-red-600 text-white"
-                  : "bg-gray-100 text-gray-700 hover:bg-gray-100 border border-gray-400"
+                  : "bg-gray-100 text-gray-700 hover:bg-gray-100 "
                   }`}
                 onClick={() => setActiveTag(tag)}
               >
@@ -148,26 +145,12 @@ function ExplorProgram() {
                         {tag}
                       </a>
                     ))}
-
                   </div>
                 </div>
-
-
-
-
-
               </div>
-
               <div className="footer-explore mx-4 px-0 py-3 ">
-
                 <a href="#" className="text-red-600 text-sm font-semibold">{card.footer} <i class="ri-arrow-right-s-line ms-1 text-gray-800"></i></a>
-
-
-
               </div>
-
-
-
             </div>
           ))}
         </div>

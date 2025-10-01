@@ -6,3 +6,8 @@
   display: none;
 }
 
+.bg-gray-900\/50 {
+	background-color: color-mix(in oklab,var(--color-gray-900)50%,transparent);
+	z-index: 40;
+	backdrop-filter: blur(11px);
+}

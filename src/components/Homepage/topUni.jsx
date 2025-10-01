@@ -55,7 +55,7 @@ const TopUni = () => {
                                 <div className=" bg-white border border-gray-300 hover:shadow-md transition-shadow p-4  w-full flex flex-col rounded-xlg">
                                     <div className='flex flex-row justify-between w-full border-b border-gray-200 pb-3'>
                                         <div className='flex flex-col'>
-                                            <a href='#' className='text-base font-bold line-clamp-2 hover:text-red-600 mb-2'>
+                                            <a href='#' className='text-base font-bold line-clamp-2 hover:text-red-600 mb-2 text-gray-800'>
                                                 Chandigarh University (CU)  Chandigarh University (CU)  Chandigarh University (CU)
                                             </a>
                                             <p className='text-gray-500 text-sm'>
@@ -83,7 +83,7 @@ const TopUni = () => {
 
                                     </div>
                                     <div className="footer-btn grid grid-cols-1 sm:grid-cols-4 gap-3 mt-3 border-t border-gray-300 pt-4 mt-4">
-                                        <button className="col-span-2 bg-red-600 text-white text-xs font-medium px-3 py-2 rounded-md w-full cursor-pointer">
+                                        <button className="col-span-2 bg-gray-800 text-white text-xs font-medium px-3 py-2 rounded-md w-full cursor-pointer hover:bg-red-600">
                                             Apply Now
                                         </button>
                                         <button className="border border-gray-300 px-3 py-2 bg-white text-xs hover:bg-gray-300 text-gray-800 rounded-md cursor-pointer">

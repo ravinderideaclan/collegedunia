@@ -78,7 +78,7 @@ const SetYourGoal = () => {
                         <div className='flex flex-col bg-gray-100 rounded-xl p-4'>
                             <div className='upper-area flex justify-between w-full'>
                                 <div className='flex flex-col'>
-                                    <h3 className='text-2xl font-semibold mb-2'>Engineering</h3>
+                                    <h3 className='text-2xl font-semibold mb-2 text-gray-800'>Engineering</h3>
                                     <p className='text-gray-500'>6344 Colleges</p>
                                 </div>
                                 <div className='w-20 h-20 flex'>
@@ -102,7 +102,7 @@ const SetYourGoal = () => {
                         <div className='flex flex-col bg-gray-100 rounded-xl p-4'>
                             <div className='upper-area flex justify-between w-full'>
                                 <div className='flex flex-col'>
-                                    <h3 className='text-2xl font-semibold mb-2'>Medical</h3>
+                                    <h3 className='text-2xl font-semibold mb-2 text-gray-800'>Medical</h3>
                                     <p className='text-gray-500'>1444 Colleges</p>
                                 </div>
                                 <div className='w-20 h-20 flex'>
@@ -125,7 +125,7 @@ const SetYourGoal = () => {
                         <div className='flex flex-col bg-gray-100 rounded-xl p-4'>
                             <div className='upper-area flex justify-between w-full'>
                                 <div className='flex flex-col'>
-                                    <h3 className='text-2xl font-semibold mb-2'>Management</h3>
+                                    <h3 className='text-2xl font-semibold mb-2 text-gray-800'>Management</h3>
                                     <p className='text-gray-500'>2644 Colleges</p>
                                 </div>
                                 <div className='w-20 h-20 flex'>
@@ -150,7 +150,7 @@ const SetYourGoal = () => {
                         <div className='flex flex-col bg-gray-100 rounded-xl p-4'>
                             <div className='upper-area flex justify-between w-full'>
                                 <div className='flex flex-col'>
-                                    <h3 className='text-2xl font-semibold mb-2'>Law</h3>
+                                    <h3 className='text-2xl font-semibold mb-2 text-gray-800'>Law</h3>
                                     <p className='text-gray-500'>5444 Colleges</p>
                                 </div>
                                 <div className='w-20 h-20 flex'>
@@ -173,7 +173,7 @@ const SetYourGoal = () => {
                         <div className='flex flex-col bg-gray-100 rounded-xl p-4'>
                             <div className='upper-area flex justify-between w-full'>
                                 <div className='flex flex-col'>
-                                    <h3 className='text-2xl font-semibold mb-2'>Medical</h3>
+                                    <h3 className='text-2xl font-semibold mb-2 text-gray-800'>Medical</h3>
                                     <p className='text-gray-500'>35444 Colleges</p>
                                 </div>
                                 <div className='w-20 h-20 flex'>
@@ -198,7 +198,7 @@ const SetYourGoal = () => {
                         <div className='flex flex-col bg-gray-100 rounded-xl p-4'>
                             <div className='upper-area flex justify-between w-full'>
                                 <div className='flex flex-col'>
-                                    <h3 className='text-2xl font-semibold mb-2'>Arts</h3>
+                                    <h3 className='text-2xl font-semibold mb-2 text-gray-800'>Arts</h3>
                                     <p className='text-gray-500'>6444 Colleges</p>
                                 </div>
                                 <div className='w-20 h-20 flex'>
